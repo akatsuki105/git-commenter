@@ -1,33 +1,33 @@
 {
+    "🐛": {
+        "code": ":bug:",
+        "en": "bug",
+        "ja": "バグの修正"
+    },
     "🎨": {
         "code": ":art:",
         "en": "structure",
-        "ja": "設計"
+        "ja": "設計の変更"
     },
     "⚡️": {
         "code": ":zap:",
         "en": "performance",
-        "ja": "パフォーマンス"
+        "ja": "パフォーマンスの改善"
     },
     "🔥": {
         "code": ":fire:",
         "en": "remove",
         "ja": "除去"
     },
-    "🐛": {
-        "code": ":bug:",
-        "en": "bug",
-        "ja": "バグ"
-    },
     "🚑": {
         "code": ":ambulance:",
         "en": "critical hotfix",
-        "ja": "致命的なバグ"
+        "ja": "致命的なバグの修正"
     },
     "✨": {
         "code": ":sparkles:",
         "en": "new features",
-        "ja": "新機能"
+        "ja": "新機能追加"
     },
     "📝": {
         "code": ":memo:",
@@ -52,32 +52,12 @@
     "✅": {
         "code": ":white_check_mark:",
         "en": "test",
-        "ja": "test"
+        "ja": "テスト"
     },
     "🔒": {
         "code": ":lock:",
         "en": "security",
         "ja": "セキュリティ"
-    },
-    "🍎": {
-        "code": ":apple:",
-        "en": "macOS/iOS",
-        "ja": "macOS/iOS"
-    },
-    "🐧": {
-        "code": ":penguin:",
-        "en": "Linux",
-        "ja": "Linux"
-    },
-    "🏁": {
-        "code": ":checkered_flag:",
-        "en": "Windows",
-        "ja": "Windows"
-    },
-    "🤖": {
-        "code": ":robot:",
-        "en": "Android",
-        "ja": "Android"
     },
     "🚧": {
         "code": ":construction:",
@@ -104,25 +84,10 @@
         "en": "remove dependency",
         "ja": "依存関係の除去"
     },
-    "⚙️": {
-        "code": ":gear:",
-        "en" : "configuration files",
-        "ja" : "設定"
-    },
-    "💩": {
-        "code": ":hankey:",
-        "en" : "bad code",
-        "ja" : "クソコード"
-    },
     "📦": {
         "code": ":package:",
         "en" : "update package",
         "ja" : "パッケージの更新"
-    },
-    "👽": {
-        "code": ":alien:",
-        "en" : "update due to external changes",
-        "ja" : "外部の変更に適応"
     },
     "🚚": {
         "code": ":truck:",
@@ -134,15 +99,50 @@
         "en": "breaking changes",
         "ja": "大きな変更"
     },
-    "🔍": {
-        "code": ":mag:",
-        "en" : "SEO",
-        "ja" : "SEO"
+    "👽": {
+        "code": ":alien:",
+        "en": "update due to external changes",
+        "ja": "外部の変更に適応"
+    },
+    "⚙️": {
+        "code": ":gear:",
+        "en": "configuration files",
+        "ja": "設定"
     },
     "🔖": {
         "code": ":label:",
         "en": "label/tag",
         "ja": "ラベル・タグ"
+    },
+    "🍎": {
+        "code": ":apple:",
+        "en": "macOS/iOS",
+        "ja": "macOS/iOS"
+    },
+    "🐧": {
+        "code": ":penguin:",
+        "en": "Linux",
+        "ja": "Linux"
+    },
+    "🏁": {
+        "code": ":checkered_flag:",
+        "en": "Windows",
+        "ja": "Windows"
+    },
+    "🤖": {
+        "code": ":robot:",
+        "en": "Android",
+        "ja": "Android"
+    },
+    "💩": {
+        "code": ":hankey:",
+        "en": "bad code",
+        "ja": "クソコード"
+    },
+    "🔍": {
+        "code": ":mag:",
+        "en": "SEO",
+        "ja": "SEO"
     },
     "🧠": {
         "code": ":brain:",

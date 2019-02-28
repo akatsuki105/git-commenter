@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import './App.css';
+import Navbar from "./Navbar/Navbar";
+import Body from "./Body";
+import { BrowserRouter as Router } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-      </div>
+      <Router>
+        <React.Fragment>
+          <Navbar />
+          <Body />
+        </React.Fragment>
+      </Router>
     );
   }
 }

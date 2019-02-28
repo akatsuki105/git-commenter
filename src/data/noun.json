@@ -17,7 +17,7 @@
     },
     "driver": {
         "frequency": "5",
-        "ja": "ドライバー"
+        "ja": "ドライバ"
     },
     "version": {
         "frequency": "6",
@@ -78,5 +78,9 @@
     "warning": {
         "frequency": "20",
         "ja": "警告"
+    },
+    "variable": {
+        "frequency": "21",
+        "ja": "変数"
     }
 }
