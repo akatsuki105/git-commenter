@@ -8,10 +8,10 @@
 ## 具体的設計案
 
 ### 利用するもの
-- S3
-- HTML/CSS
-- Javascript
-- React
+- S3 ホスト
+- HTML/CSS GUI
+- Javascript GUI
+- React GUI
 
 
 ### メッセージ作成
@@ -40,10 +40,17 @@
 なるべくキーボードの操作なしでコミットメッセージのコピーまでできるようにしたい
 
 ### その他の機能
+
+##### 1
+- ユーザーごとのテンプレを作ってもいいかも
+- 形容詞・名詞はテンプレかできそう? [参照](https://qiita.com/shikichee/items/a5f922a3ef3aa58a1839)
+- プレフィックス機能にも対応できるといいかも [参照](https://qiita.com/numanomanu/items/45dd285b286a1f7280ed)
+- 絵文字も入れたい [参照1](https://gitmoji.carloscuesta.me/) [参照2](https://getemoji.com/)
+- テンプレファイルの読み込みも可能にしたい [参照](https://yuu.1000quu.com/commit_template_for_pictogram_commitment)
+- テンプレメッセージを用意しておくといいかも
+
+##### 2
 - 機能を使われた回数とかをDynamoでカウントできるようにしたら面白いかも(プライバシーONOFFは必要)
 - 履歴機能
-- テンプレメッセージを用意しておくといいかも
 - リクエスト欄をつくってもいいかも
-- ユーザーごとのテンプレを作ってもいいかも
-- 形容詞・名詞はテンプレかできそう? [ここ](https://qiita.com/shikichee/items/a5f922a3ef3aa58a1839)
-- プレフィックス機能にも対応できるといいかも [ここ](https://qiita.com/numanomanu/items/45dd285b286a1f7280ed)
+

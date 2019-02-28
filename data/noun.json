@@ -1,0 +1,82 @@
+{
+    "test": {
+        "frequency": "1",
+        "ja": "テスト"
+    },
+    "code": {
+        "frequency": "2",
+        "ja": "コード"
+    },
+    "error": {
+        "frequency": "3",
+        "ja": "エラー"
+    },
+    "function": {
+        "frequency": "4",
+        "ja": "機能・関数"
+    },
+    "driver": {
+        "frequency": "5",
+        "ja": "ドライバー"
+    },
+    "version": {
+        "frequency": "6",
+        "ja": "バージョン"
+    },
+    "typo": {
+        "frequency": "7",
+        "ja": "タイポ"
+    },
+    "docs": {
+        "frequency": "8",
+        "ja": "ドキュメント"
+    },
+    "bug": {
+        "frequency": "9",
+        "ja": "バグ"
+    },
+    "return": {
+        "frequency": "10",
+        "ja": "リターン"
+    },
+    "tag": {
+        "frequency": "11",
+        "ja": "タグ"
+    },
+    "default": {
+        "frequency": "12",
+        "ja": "デフォルト"
+    },
+    "device": {
+        "frequency": "13",
+        "ja": "デバイス"
+    },
+    "handling": {
+        "frequency": "14",
+        "ja": "ハンドリング"
+    },
+    "files": {
+        "frequency": "15",
+        "ja": "ファイル"
+    },
+    "type": {
+        "frequency": "16",
+        "ja": "型・タイプ"
+    },
+    "auto": {
+        "frequency": "17",
+        "ja": "オート"
+    },
+    "name": {
+        "frequency": "18",
+        "ja": "名前"
+    },
+    "data": {
+        "frequency": "19",
+        "ja": "データ"
+    },
+    "warning": {
+        "frequency": "20",
+        "ja": "警告"
+    }
+}

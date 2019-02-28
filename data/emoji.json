@@ -1,0 +1,152 @@
+{
+    "🎨": {
+        "code": ":art:",
+        "en": "structure",
+        "ja": "設計"
+    },
+    "⚡️": {
+        "code": ":zap:",
+        "en": "performance",
+        "ja": "パフォーマンス"
+    },
+    "🔥": {
+        "code": ":fire:",
+        "en": "remove",
+        "ja": "除去"
+    },
+    "🐛": {
+        "code": ":bug:",
+        "en": "bug",
+        "ja": "バグ"
+    },
+    "🚑": {
+        "code": ":ambulance:",
+        "en": "critical hotfix",
+        "ja": "致命的なバグ"
+    },
+    "✨": {
+        "code": ":sparkles:",
+        "en": "new features",
+        "ja": "新機能"
+    },
+    "📝": {
+        "code": ":memo:",
+        "en": "docs",
+        "ja": "ドキュメント"
+    },
+    "🚀": {
+        "code": ":rocket:",
+        "en": "deploy",
+        "ja": "デプロイ"
+    },
+    "💄": {
+        "code": ":lipstick:",
+        "en": "UI/UX",
+        "ja": "UI/UX"
+    },
+    "🎉": {
+        "code": ":tada:",
+        "en" : "initial commit",
+        "ja" : "初めてのコミット"
+    },
+    "✅": {
+        "code": ":white_check_mark:",
+        "en": "test",
+        "ja": "test"
+    },
+    "🔒": {
+        "code": ":lock:",
+        "en": "security",
+        "ja": "セキュリティ"
+    },
+    "🍎": {
+        "code": ":apple:",
+        "en": "macOS/iOS",
+        "ja": "macOS/iOS"
+    },
+    "🐧": {
+        "code": ":penguin:",
+        "en": "Linux",
+        "ja": "Linux"
+    },
+    "🏁": {
+        "code": ":checkered_flag:",
+        "en": "Windows",
+        "ja": "Windows"
+    },
+    "🤖": {
+        "code": ":robot:",
+        "en": "Android",
+        "ja": "Android"
+    },
+    "🚧": {
+        "code": ":construction:",
+        "en": "WIP",
+        "ja": "WIP"
+    },
+    "♻️": {
+        "code": ":recycle:",
+        "en": "refactoring code",
+        "ja": "リファクタリング"
+    },
+    "🐳": {
+        "code": ":whale:",
+        "en": "Docker",
+        "ja": "Docker"
+    },
+    "➕": {
+        "code": ":heavy_plus_sign:",
+        "en": "add dependency",
+        "ja": "依存関係の追加"
+    },
+    "➖": {
+        "code": ":heavy_minus_sign:",
+        "en": "remove dependency",
+        "ja": "依存関係の除去"
+    },
+    "⚙️": {
+        "code": ":gear:",
+        "en" : "configuration files",
+        "ja" : "設定"
+    },
+    "💩": {
+        "code": ":hankey:",
+        "en" : "bad code",
+        "ja" : "クソコード"
+    },
+    "📦": {
+        "code": ":package:",
+        "en" : "update package",
+        "ja" : "パッケージの更新"
+    },
+    "👽": {
+        "code": ":alien:",
+        "en" : "update due to external changes",
+        "ja" : "外部の変更に適応"
+    },
+    "🚚": {
+        "code": ":truck:",
+        "en" : "move/rename",
+        "ja" : "移動/リネーム"
+    },
+    "💥": {
+        "code": ":boom:",
+        "en": "breaking changes",
+        "ja": "大きな変更"
+    },
+    "🔍": {
+        "code": ":mag:",
+        "en" : "SEO",
+        "ja" : "SEO"
+    },
+    "🔖": {
+        "code": ":label:",
+        "en": "label/tag",
+        "ja": "ラベル・タグ"
+    },
+    "🧠": {
+        "code": ":brain:",
+        "en": "singularity",
+        "ja": "シンギュラリティ"
+    }
+}

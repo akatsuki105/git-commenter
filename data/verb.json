@@ -1,0 +1,97 @@
+{
+    "fix" : {
+        "frequency" : "1",
+        "ja": "修正",
+        "phrase": [["o1", "in", "o2"], ["for", "o1"], ["o1", "to", "o2"], ["o1", "of", "o2"]] 
+    },
+    "add" : {
+        "frequency": "2",
+        "ja": "追加",
+        "phrase": [["o1", "to", "o2"], ["o1", "for", "o2"]] 
+    },
+    "remove" : {
+        "frequency": "3",
+        "ja": "除去",
+        "phrase": [["o1", "from", "o2"], ["o1", "in", "o2"]] 
+    },
+    "use" : {
+        "frequency": "4",
+        "ja": "用いる",
+        "phrase": [["o1", "instead of", "o2"], ["o1", "in", "o2"], ["o1", "for", "o2"]] 
+    },
+    "update" : {
+        "frequency": "5",
+        "ja": "更新",
+        "phrase": [["to", "o1"], ["o1", "to", "o2"], ["o1", "for", "o2"]] 
+    },
+    "merge" : {
+        "frequency": "7",
+        "ja": "マージ",
+        "phrase": []
+    },
+    "make" : {
+        "frequency": "8",
+        "ja": "作成",
+        "phrase": [["it", "c1"], ["it", "possible"]] 
+    },
+    "move" : {
+        "frequency": "9",
+        "ja": "移動",
+        "phrase": [["o1", "from", "o2"], ["o1", "to", "o2"], ["o1", "in", "o2"]] 
+    },
+    "don't" : {
+        "frequency": "10",
+        "ja": "しない",
+        "phrase": [["v1", "o1"]]
+    },
+    "check" : {
+        "frequency": "11",
+        "ja": "確認",
+        "phrase": [["for", "o1"], ["o1", "in", "o2"]] 
+    },
+    "change" : {
+        "frequency": "12",
+        "ja": "変更",
+        "phrase": [["o1", "to", "o2"], ["to", "o1"], ["o1", "for", "o2"], ["o1", "in", "o2"]] 
+    },
+    "allow" : {
+        "frequency": "13",
+        "ja": "許可",
+        "phrase": [["o1", "to", "v1"]]
+    },
+    "clean" : {
+        "frequency": "14",
+        "ja": "一掃",
+        "phrase": []
+    },
+    "set" : {
+        "frequency": "15",
+        "ja": "セット",
+        "phrase": [["o1", "to", "o2"], ["o1", "for", "o2"]] 
+    },
+    "convert" : {
+        "frequency": "16",
+        "ja": "変換",
+        "phrase": [["o1", "to", "o2"], ["to", "o1"]] 
+    },
+    "rename" : {
+        "frequency": "17",
+        "ja": "リネーム",
+        "phrase": [["o1", "to", "o2"]] 
+    },
+    "do" : {
+        "frequency": "18",
+        "ja": "した",
+        "phrase": []
+    },
+    "revert" : {
+        "frequency": "19",
+        "ja": "巻き戻し",
+        "phrase": []
+    },
+    "avoid" : {
+        "frequency": "20",
+        "ja": "避ける",
+        "phrase": [["o1", "to", "v1"]]
+    }
+}

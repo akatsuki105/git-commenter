@@ -1,0 +1,62 @@
+{
+    "0" : {
+        "en" : "Fix bugs",
+        "ja" : "バグ修正"
+    },
+    "1": {
+        "en": "Initial commit",
+        "ja": "初めてのコミット"
+    },
+    "2": {
+        "en": "Remove unused files",
+        "ja": "使われていないファイルの削除"
+    },
+    "3": {
+        "en": "Add empty line",
+        "ja": "空行の追加"
+    },
+    "4": {
+        "en": "Remove extra whitespace",
+        "ja": "余分なスペースの削除"
+    },
+    "5": {
+        "en": "Rename variables",
+        "ja": "変数の名前を変更"
+    },
+    "6": {
+        "en": "Change API",
+        "ja": "APIを変更"
+    },
+    "7": {
+        "en": "Fix designs",
+        "ja": "デザインを修正"
+    },
+    "8": {
+        "en": "Improve functions",
+        "ja": "機能の改善"
+    },
+    "9": {
+        "en": "Update README.md",
+        "ja": "README.mdを更新"
+    },
+    "10": {
+        "en": "Fix comment",
+        "ja": "コメントを修正"
+    },
+    "11": {
+        "en": "Remove debug statement",
+        "ja": "デバッグ文を削除"
+    },
+    "12": {
+        "en": "Remove unused variable",
+        "ja": "使われていない変数の削除"
+    },
+    "13": {
+        "en": "Remove some dead code",
+        "ja": "不必要なコードの削除"
+    },
+    "14": {
+        "en": "Fix typo",
+        "ja": "タイポを修正"
+    }
+}

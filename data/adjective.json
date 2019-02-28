@@ -1,0 +1,78 @@
+{
+    "new": {
+        "frequency": "1",
+        "ja": "新しい"
+    },
+    "unused": {
+        "frequency": "2",
+        "ja": "使用していない"
+    },
+    "static": {
+        "frequency": "3",
+        "ja": "静的な"
+    },
+    "empty": {
+        "frequency": "4",
+        "ja": "空の"
+    },
+    "old": {
+        "frequency": "5",
+        "ja": "古い"
+    },
+    "small": {
+        "frequency": "7",
+        "ja": "小さな"
+    },
+    "initial": {
+        "frequency": "8",
+        "ja": "最初の"
+    },
+    "local": {
+        "frequency": "9",
+        "ja": "ローカルの"
+    },
+    "wrong": {
+        "frequency": "10",
+        "ja": "間違った"
+    },
+    "common": {
+        "frequency": "11",
+        "ja": "共通の"
+    },
+    "other": {
+        "frequency": "12",
+        "ja": "他の"
+    },
+    "dead": {
+        "frequency": "13",
+        "ja": "死んだ"
+    },
+    "possible": {
+        "frequency": "15",
+        "ja": "可能性のある"
+    },
+    "unneeded": {
+        "frequency": "16",
+        "ja": "不必要な"
+    },
+    "same": {
+        "frequency": "17",
+        "ja": "同じ"
+    },
+    "global": {
+        "frequency": "18",
+        "ja": "グローバルな"
+    },
+    "invalid": {
+        "frequency": "19",
+        "ja": "不正な"
+    },
+    "specific": {
+        "frequency": "20",
+        "ja": "特定の"
+    },
+    "extra": {
+        "frequency": "21",
+        "ja": "余分な"
+    }
+}
