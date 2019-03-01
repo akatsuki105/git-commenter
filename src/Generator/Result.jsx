@@ -11,6 +11,7 @@ class Result extends Component {
 
         this.toggle = this.toggle.bind(this);
         this.copyAlert = this.copyAlert.bind(this);
+        this.register = this.register.bind(this);
     }
 
     toggle() {
@@ -27,17 +28,37 @@ class Result extends Component {
         }, 1000);
     }
 
+    // 出来上がったコミットメッセージをテンプレとして保存しておく機能
+    register() {
+        const message = this.props.result;
+        console.log(message);
+        
+        let userTemplate = JSON.parse(localStorage.getItem("userTemplate"));
+
+        if (userTemplate) {
+            userTemplate.push(message);
+            localStorage.setItem("userTemplate", JSON.stringify(userTemplate));
+        } else {
+            localStorage.setItem("userTemplate", JSON.stringify([message]));
+        }
+    }
+
     render() {
         return (
             <React.Fragment>
+
                 <FormGroup className="py-3">
-                    <Label for="gitComment">Git Comment</Label>
+                    <Label for="gitComment">{"🎊 Git Comment"}</Label>
                     <Input type="textarea" name="gitComment" disabled value={this.props.result}></Input>
                 </FormGroup>
+
                 <CopyToClipboard text={this.props.result} onCopy={this.copyAlert}>
                     <Button color="primary">Copy</Button>
                 </CopyToClipboard>
-                <Fade in={this.state.fadeIn}>
+
+                <Button className="mx-3" onClick={this.register}>Register</Button>
+
+                <Fade in={this.state.fadeIn} className="pt-2">
                     Copied!
                 </Fade>
             </React.Fragment>
