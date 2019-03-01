@@ -14,57 +14,39 @@ import { connect } from "react-redux";
 
 class Generator extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            emoji: "",
-            verb: "",
-            adjective: "",
-            object: "",
-            adverb: ""
-        };
-
-        this.update = this.update.bind(this);
-    }
-
-    update(key, value) {
-        this.setState({
-            [key]: value
-        });
-    }
-
-
     render() {
+        const message = this.props.message;
         const lang = this.props.lang;
         let result = ""
-        if (this.state.emoji !== "") {
-            result += `${this.state.emoji} : `;
+        if (message.emoji !== "") {
+            result += `${message.emoji} : `;
         }
-        if (this.state.verb !== "") {
-            result += this.state.verb
+        if (message.verb !== "") {
+            result += message.verb
         }
-        if (this.state.adjective !== "") {
-            result += ` ${this.state.adjective}`
+        if (message.adjective !== "") {
+            result += ` ${message.adjective}`
         }
-        if (this.state.object !== "") {
-            result += ` ${this.state.object}`
+        if (message.object !== "") {
+            result += ` ${message.object}`
         }
-        if (this.state.adverb !== "") {
-            result += ` ${this.state.adverb}`
+        if (message.adverb !== "") {
+            result += ` ${message.adverb}`
         }
+
+        console.log("result: ", result);
 
         return (
             <Form>
-                <Emoji onUpdate={this.update} lang={lang} />
+                <Emoji lang={lang} />
 
-                <Verb onUpdate={this.update} lang={lang} />
+                <Verb lang={lang} />
 
-                <Adjective onUpdate={this.update} lang={lang} />
+                <Adjective lang={lang} />
 
-                <Object onUpdate={this.update} lang={lang} />
+                <Object lang={lang} />
 
-                <Adverb onUpdate={this.update} lang={lang} />
+                <Adverb lang={lang} />
 
                 <hr/>
 
@@ -80,6 +62,7 @@ class Generator extends Component {
 
 const mapStateToProps = (state) => {
     return {
+        message: state.message,
         lang: state.lang.lang
     };
 };

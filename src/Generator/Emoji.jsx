@@ -3,24 +3,20 @@ import { FormGroup, Label, Input, FormText } from 'reactstrap';
 
 import emojiData from '../data/emoji.json';
 
+// Redux
+import { connect } from "react-redux";
+import { addElement } from "../Redux/actions";
+
 class Emoji extends Component {
 
     constructor(props) {
         super(props);
 
-        this.state = {
-            emoji : ""
-        };
-
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(e) {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-
-        this.props.onUpdate("emoji", e.target.value);
+        this.props.dispatch(addElement("emoji", e.target.value));
     }
 
     render() {
@@ -45,4 +41,10 @@ class Emoji extends Component {
     }
 }
 
-export default Emoji;
+const mapStateToProps = (state) => {
+    return {
+        emoji: state.message.emoji
+    };
+};
+
+export default connect(mapStateToProps)(Emoji);

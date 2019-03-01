@@ -3,6 +3,10 @@ import { Row, Col, FormGroup, Label, Input } from 'reactstrap';
 
 import nounData from '../data/noun.json';
 
+// Redux
+import { connect } from "react-redux";
+import { addElement } from "../Redux/actions";
+
 class CommitObject extends Component {
 
     constructor(props) {
@@ -10,8 +14,7 @@ class CommitObject extends Component {
 
         this.state = {
             objectForm: "",
-            objectTemplate: "",
-            object: ""
+            objectTemplate: ""
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -21,18 +24,16 @@ class CommitObject extends Component {
         if (e.target.name === "objectForm") {
             this.setState({
                 objectForm: e.target.value,
-                objectTemplate: "",
-                object: e.target.value
+                objectTemplate: ""
             });
         } else if (e.target.name === "objectTemplate") {
             this.setState({
                 objectForm: "",
-                objectTemplate: e.target.value,
-                object: e.target.value
+                objectTemplate: e.target.value
             });
         }
 
-        this.props.onUpdate("object", e.target.value);
+        this.props.dispatch(addElement("object", e.target.value));
     }
 
     render() {
@@ -63,4 +64,10 @@ class CommitObject extends Component {
     }
 }
 
-export default CommitObject;
+const mapStateToProps = (state) => {
+    return {
+        object: state.message.object
+    };
+};
+
+export default connect(mapStateToProps)(CommitObject);

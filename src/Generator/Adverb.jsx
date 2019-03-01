@@ -3,6 +3,10 @@ import { Row, Button, Col, Label, FormText } from 'reactstrap';
 
 import AdverbFrom from "./AdverbForm";
 
+// Redux
+import { connect } from "react-redux";
+import { addElement } from "../Redux/actions";
+
 class Adverb extends Component {
 
     constructor(props) {
@@ -22,11 +26,8 @@ class Adverb extends Component {
     updateAdverb(id, adverb) {
         let adverbList = this.state.adverbList;
         adverbList[id] = adverb;
-        this.setState({
-            adverbList: adverbList
-        });
 
-        this.props.onUpdate("adverb", adverbList.join(" "));
+        this.props.dispatch(addElement("adverb", adverbList.join(" ")));
     }
 
     renderAdverb() {
@@ -56,7 +57,7 @@ class Adverb extends Component {
                 counter: this.state.counter - 1,
                 adverbList: adverbList
             })
-            this.props.onUpdate("adverb", adverbList.join(" "));
+            this.props.dispatch(addElement("adverb", adverbList.join(" ")));
         }
     }
 
@@ -88,4 +89,10 @@ class Adverb extends Component {
     }
 }
 
-export default Adverb;
+const mapStateToProps = (state) => {
+    return {
+        adverb: state.message.adverb
+    };
+};
+
+export default connect(mapStateToProps)(Adverb);

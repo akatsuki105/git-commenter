@@ -57,8 +57,9 @@ class AdverbForm extends Component {
         return (
             <Col md={12}>
                 <FormGroup row>
-                    <Label for="prep" sm={2}>Prep.</Label>
-                    <Col md={5}>
+                
+                    <Label for="prep" sm={1}>Prep.</Label>
+                    <Col md={2}>
                         <FormGroup>
                             <Input type="select" name="prepTemplate" onChange={this.handleChange} value={this.state.prepTemplate} >
                                 <option value=""></option>
@@ -72,16 +73,14 @@ class AdverbForm extends Component {
                             </Input>
                         </FormGroup>
                     </Col>
-                    <Col md={5}>
+                    <Col md={3}>
                         <FormGroup>
                             <Input type="text" name="prepForm" onChange={this.handleChange} value={this.state.prepForm} placeholder="Form" />
                         </FormGroup>
                     </Col>
-                </FormGroup>
 
-                <FormGroup row>
-                    <Label for="prep" sm={2}>Object</Label>
-                    <Col md={5}>
+                    <Label for="prep" sm={1}>Object</Label>
+                    <Col md={2}>
                         <FormGroup>
                             <Input type="select" name="pObjectTemplate" onChange={this.handleChange} value={this.state.pObjectTemplate} >
                                 <option value=""></option>
@@ -95,12 +94,14 @@ class AdverbForm extends Component {
                             </Input>
                         </FormGroup>
                     </Col>
-                    <Col md={5}>
+                    <Col md={3}>
                         <FormGroup>
                             <Input type="text" name="pObjectForm" onChange={this.handleChange} value={this.state.pObjectForm} placeholder="Form" />
                         </FormGroup>
                     </Col>
+
                 </FormGroup>
+
             </Col>
         );
     }

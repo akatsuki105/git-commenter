@@ -1,3 +1,17 @@
+export function addElement(key, value) {
+    return ({
+        type: "ADD_ELEMENT",
+        key,
+        value
+    });
+}
+
+export function overwrite({emoji, verb, adjective, object, adverb}) {
+    return ({
+        type: "OVERWRITE",
+        emoji, verb, adjective, object, adverb
+    });
+}
 
 export function switchLang(lang) {
     localStorage.setItem("lang", lang);

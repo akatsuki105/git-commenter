@@ -12,6 +12,7 @@ class Result extends Component {
         this.toggle = this.toggle.bind(this);
         this.copyAlert = this.copyAlert.bind(this);
         this.register = this.register.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
     toggle() {
@@ -43,6 +44,10 @@ class Result extends Component {
         }
     }
 
+    reset() {
+
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -57,6 +62,8 @@ class Result extends Component {
                 </CopyToClipboard>
 
                 <Button className="mx-3" onClick={this.register}>Register</Button>
+
+                <Button color="danger" onClick={this.reset}>Reset</Button>
 
                 <Fade in={this.state.fadeIn} className="pt-2">
                     Copied!

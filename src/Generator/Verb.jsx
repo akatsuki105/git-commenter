@@ -3,6 +3,10 @@ import { Row, Col, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 import verbData from '../data/verb.json';
 
+// Redux
+import { connect } from "react-redux";
+import { addElement } from "../Redux/actions";
+
 class Verb extends Component {
 
     constructor(props) {
@@ -10,8 +14,7 @@ class Verb extends Component {
 
         this.state = {
             verbForm: "",
-            verbTemplate: "",
-            verb: ""
+            verbTemplate: ""
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -21,18 +24,16 @@ class Verb extends Component {
         if (e.target.name === "verbForm") {
             this.setState({
                 verbForm: e.target.value,
-                verbTemplate: "",
-                verb: e.target.value
+                verbTemplate: ""
             });
         } else if (e.target.name === "verbTemplate") {
             this.setState({
                 verbForm: "",
-                verbTemplate: e.target.value,
-                verb: e.target.value
+                verbTemplate: e.target.value
             });
         }
 
-        this.props.onUpdate("verb", e.target.value);
+        this.props.dispatch(addElement("verb", e.target.value));
     }
 
     render() {
@@ -69,4 +70,10 @@ class Verb extends Component {
     }
 }
 
-export default Verb;
+const mapStateToProps = (state) => {
+    return {
+        verb: state.message.verb
+    };
+};
+
+export default connect(mapStateToProps)(Verb);

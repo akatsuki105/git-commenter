@@ -3,6 +3,10 @@ import { Row, Col, FormGroup, Label, Input } from 'reactstrap';
 
 import adjectiveData from '../data/adjective.json';
 
+// Redux
+import { connect } from "react-redux";
+import { addElement } from "../Redux/actions";
+
 class Adjective extends Component {
 
     constructor(props) {
@@ -10,8 +14,7 @@ class Adjective extends Component {
 
         this.state = {
             adjectiveForm: "",
-            adjectiveTemplate: "",
-            adjective: ""
+            adjectiveTemplate: ""
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -21,18 +24,16 @@ class Adjective extends Component {
         if (e.target.name === "adjectiveForm") {
             this.setState({
                 adjectiveForm: e.target.value,
-                adjectiveTemplate: "",
-                adjective: e.target.value
+                adjectiveTemplate: ""
             });
         } else if (e.target.name === "adjectiveTemplate") {
             this.setState({
                 adjectiveForm: "",
-                adjectiveTemplate: e.target.value,
-                adjective: e.target.value
+                adjectiveTemplate: e.target.value
             });
         }
 
-        this.props.onUpdate("adjective", e.target.value);
+        this.props.dispatch(addElement("adjective", e.target.value));
     }
 
     render() {
@@ -63,4 +64,10 @@ class Adjective extends Component {
     }
 }
 
-export default Adjective;
+const mapStateToProps = (state) => {
+    return {
+        adjective: state.message.adjective
+    };
+};
+
+export default connect(mapStateToProps)(Adjective);
