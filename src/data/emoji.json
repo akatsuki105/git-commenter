@@ -44,6 +44,11 @@
         "en": "UI/UX",
         "ja": "UI/UX"
     },
+    "💬": {
+        "code": ":comment:",
+        "en": "comment",
+        "ja": "コメント"
+    },
     "🎉": {
         "code": ":tada:",
         "en" : "initial commit",
