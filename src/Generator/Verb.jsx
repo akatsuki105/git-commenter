@@ -13,57 +13,70 @@ class Verb extends Component {
         super(props);
 
         this.state = {
-            verbForm: "",
-            verbTemplate: ""
+            input: "select"
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.renderInput = this.renderInput.bind(this);
+
     }
 
     handleChange(e) {
-        if (e.target.name === "verbForm") {
+        if (e.target.name === "input") {
             this.setState({
-                verbForm: e.target.value,
-                verbTemplate: ""
+                input : e.target.value
             });
-        } else if (e.target.name === "verbTemplate") {
-            this.setState({
-                verbForm: "",
-                verbTemplate: e.target.value
-            });
+            this.props.dispatch(addElement("verb", ""));
+        } else if (e.target.name === "verb") {
+            this.props.dispatch(addElement("verb", e.target.value));
         }
+    }
 
-        this.props.dispatch(addElement("verb", e.target.value));
+    renderInput() {
+        if (this.state.input === "select") {
+            return (
+                <FormGroup>
+                    <Input type="select" name="verb" onChange={this.handleChange} value={this.props.verb} >
+                        <option value=""></option>
+                        {
+                            Object.keys(verbData).map((verb) => {
+                                return (
+                                    <option value={verb} key={verb}>{(this.props.lang === "en") ? verb : `${verb} ${verbData[verb].ja}`}</option>
+                                )
+                            })
+                        }
+                    </Input>
+                    <FormText color="muted">
+                        {(this.props.lang === "en") ? "What is often used is in the select box." : "よく利用されるものがセレクトボックスの中に入っています。"}
+                    </FormText>
+                </FormGroup>
+            )
+        } else if (this.state.input === "form") {
+            return (
+                <FormGroup>
+                    <Input type="text" name="verb" onChange={this.handleChange} value={this.props.verb} />
+                    <FormText color="muted">
+                        {(this.props.lang === "en") ? "User can enter freely." : "ユーザーが自由に入力できます。"}
+                    </FormText>
+                </FormGroup>
+            )
+        }
     }
 
     render() {
         return (
             <Row form>
                 <Col md={12}><Label>{"🚵🏼‍ Verb"}</Label></Col>
-                <Col md={6}>
+                <Col md={2}>
                     <FormGroup>
-                        <Input type="select" name="verbTemplate" onChange={this.handleChange} value={this.state.verbTemplate} >
-                            <option value="">{(this.props.lang === "en") ? "commit category" : "どのようなコミットか"}</option>
-                            {
-                                Object.keys(verbData).map((verb) => {
-                                    return (
-                                        <option value={verb} key={verb}>{(this.props.lang === "en") ? verb : `${verb} ${verbData[verb].ja}`}</option>
-                                    )
-                                })
-                            }
+                        <Input type="select" name="input" onChange={this.handleChange} value={this.state.input} >
+                            <option value="select">{(this.props.lang === "en") ? "template" : "テンプレ"}</option>
+                            <option value="form">{(this.props.lang === "en") ? "form" : "フォーム"}</option>
                         </Input>
-                        <FormText color="muted">
-                            {(this.props.lang === "en") ? "What is often used is in the select box." : "よく利用されるものがセレクトボックスの中に入っています。"}
-                        </FormText>
                     </FormGroup>
                 </Col>
-                <Col md={6}>
-                    <FormGroup>
-                        <Input type="text" name="verbForm" onChange={this.handleChange} value={this.state.verbForm} placeholder="Form" />
-                        <FormText color="muted">
-                            {(this.props.lang === "en") ? "User can enter freely." : "ユーザーが自由に入力できます。"}
-                        </FormText>
-                    </FormGroup>
+                <Col md={10}>
+                    {this.renderInput()}
                 </Col>
             </Row>
         );

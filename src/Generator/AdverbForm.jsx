@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, FormGroup, Label, Input } from 'reactstrap';
+import { Row, Col, FormGroup, Label, Input } from 'reactstrap';
 
 import prepositionData from '../data/preposition.json';
 import nounData from '../data/noun.json';
@@ -13,58 +13,52 @@ class AdverbForm extends Component {
         super(props);
 
         this.state = {
-            prepForm: "",
-            prepTemplate: "",
+            input: "select",
             prep: "",
-            pObjectForm: "",
-            pObjectTemplate: "",
-            pObject: ""
+            pObject: "",
+            adverb: ""
         };
 
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(e) {
-        if (e.target.name === "prepForm") {
+        if (e.target.name === "prep") {
             this.setState({
-                prepForm: e.target.value,
-                prepTemplate: "",
                 prep: e.target.value
             });
             this.props.onUpdate(this.props.id, e.target.value + " " + this.state.pObject);
-        } else if (e.target.name === "prepTemplate") {
+        } else if (e.target.name === "pObject") {
             this.setState({
-                prepForm: "",
-                prepTemplate: e.target.value,
-                prep: e.target.value
-            });
-            this.props.onUpdate(this.props.id, e.target.value + " " + this.state.pObject);
-        } else if (e.target.name === "pObjectForm") {
-            this.setState({
-                pObjectForm: e.target.value,
-                pObjectTemplate: "",
                 pObject: e.target.value
             });
             this.props.onUpdate(this.props.id, this.state.prep + " " + e.target.value);
-        } else if (e.target.name === "pObjectTemplate") {
+        } else if (e.target.name === "adverb") {
             this.setState({
-                pObjectForm: "",
-                pObjectTemplate: e.target.value,
-                pObject: e.target.value
+                prep: "",
+                pObject: "",
+                adverb: e.target.value
             });
-            this.props.onUpdate(this.props.id, this.state.prep + " " + e.target.value);
+            this.props.onUpdate(this.props.id, e.target.value);
+        } else if (e.target.name === "input") {
+            this.setState({
+                input: e.target.value,
+                prep: "",
+                pObject: "",
+                adverb: ""
+            });
+            this.props.onUpdate(this.props.id, "");
         }
     }
 
-    render() {
-        return (
-            <Col md={12}>
+    renderInput() {
+        if (this.state.input === "select") {
+            return (
                 <FormGroup row>
-
                     <Label for="prep" sm={1}>Prep.</Label>
-                    <Col md={2}>
+                    <Col md={5}>
                         <FormGroup>
-                            <Input type="select" name="prepTemplate" onChange={this.handleChange} value={this.state.prepTemplate} >
+                            <Input type="select" name="prep" onChange={this.handleChange} value={this.state.prep} >
                                 <option value=""></option>
                                 {
                                     Object.keys(prepositionData).map((prep) => {
@@ -76,16 +70,11 @@ class AdverbForm extends Component {
                             </Input>
                         </FormGroup>
                     </Col>
-                    <Col md={3}>
-                        <FormGroup>
-                            <Input type="text" name="prepForm" onChange={this.handleChange} value={this.state.prepForm} placeholder="Form" />
-                        </FormGroup>
-                    </Col>
 
                     <Label for="prep" sm={1}>Object</Label>
-                    <Col md={2}>
+                    <Col md={5}>
                         <FormGroup>
-                            <Input type="select" name="pObjectTemplate" onChange={this.handleChange} value={this.state.pObjectTemplate} >
+                            <Input type="select" name="pObject" onChange={this.handleChange} value={this.state.pObject} >
                                 <option value=""></option>
                                 {
                                     Object.keys(nounData).map((noun) => {
@@ -97,15 +86,40 @@ class AdverbForm extends Component {
                             </Input>
                         </FormGroup>
                     </Col>
-                    <Col md={3}>
+                </FormGroup>
+            )
+        } else if (this.state.input === "form") {
+            return (
+                <Row form>
+                    <Col md={12}>
                         <FormGroup>
-                            <Input type="text" name="pObjectForm" onChange={this.handleChange} value={this.state.pObjectForm} placeholder="Form" />
+                            <Input type="text" name="adverb" onChange={this.handleChange} value={this.state.adverb} />
                         </FormGroup>
                     </Col>
+                </Row>
+            )
+        }
+    }
 
-                </FormGroup>
-
+    render() {
+        return (
+            <Col md={12}>
+                
+                <Row form>
+                    <Col md={2}>
+                        <FormGroup>
+                            <Input type="select" name="input" onChange={this.handleChange} value={this.state.input} >
+                                <option value="select">{(this.props.lang === "en") ? "template" : "テンプレ"}</option>
+                                <option value="form">{(this.props.lang === "en") ? "form" : "フォーム"}</option>
+                            </Input>
+                        </FormGroup>
+                    </Col>
+                    <Col md={10}>
+                        {this.renderInput()}
+                    </Col>
+                </Row>
             </Col>
+            
         );
     }
 }
