@@ -46,7 +46,7 @@ class Adjective extends Component {
                             {
                                 Object.keys(adjectiveData).map((adjective) => {
                                     return (
-                                        <option value={adjective}>{(this.props.lang === "en") ? adjective : `${adjective}  ${adjectiveData[adjective].ja}`}</option>
+                                        <option value={adjective} key={adjective}>{(this.props.lang === "en") ? adjective : `${adjective}  ${adjectiveData[adjective].ja}`}</option>
                                     )
                                 })
                             }

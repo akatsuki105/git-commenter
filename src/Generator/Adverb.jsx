@@ -56,6 +56,7 @@ class Adverb extends Component {
                 counter: this.state.counter - 1,
                 adverbList: adverbList
             })
+            this.props.onUpdate("adverb", adverbList.join(" "));
         }
     }
 

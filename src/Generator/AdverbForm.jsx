@@ -65,7 +65,7 @@ class AdverbForm extends Component {
                                 {
                                     Object.keys(prepositionData).map((prep) => {
                                         return (
-                                            <option value={prep}>{(this.props.lang === "en") ? prep : `${prep} ${prepositionData[prep].ja}`}</option>
+                                            <option value={prep} key={prep}>{(this.props.lang === "en") ? prep : `${prep} ${prepositionData[prep].ja}`}</option>
                                         )
                                     })
                                 }
@@ -88,7 +88,7 @@ class AdverbForm extends Component {
                                 {
                                     Object.keys(nounData).map((noun) => {
                                         return (
-                                            <option value={noun}>{(this.props.lang === "en") ? noun : `${noun} ${nounData[noun].ja}`}</option>
+                                            <option value={noun} key={noun}>{(this.props.lang === "en") ? noun : `${noun} ${nounData[noun].ja}`}</option>
                                         )
                                     })
                                 }
