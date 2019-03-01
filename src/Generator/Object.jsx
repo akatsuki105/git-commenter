@@ -46,7 +46,7 @@ class CommitObject extends Component {
                             {
                                 Object.keys(nounData).map((noun) => {
                                     return (
-                                        <option value={noun}>{(this.props.lang === "en") ? noun : `${noun}  ${nounData[noun].ja}`}</option>
+                                        <option value={noun} key={noun}>{(this.props.lang === "en") ? noun : `${noun}  ${nounData[noun].ja}`}</option>
                                     )
                                 })
                             }

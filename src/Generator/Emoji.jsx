@@ -32,7 +32,7 @@ class Emoji extends Component {
                     {
                         Object.keys(emojiData).map((emoji) => {
                             return (
-                                <option value={emoji}>{emoji} {(this.props.lang === "en") ? emojiData[emoji].en : emojiData[emoji].ja}</option>
+                                <option value={emoji} key={emoji}>{emoji} {(this.props.lang === "en") ? emojiData[emoji].en : emojiData[emoji].ja}</option>
                             )
                         })
                     }

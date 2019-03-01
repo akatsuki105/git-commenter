@@ -38,10 +38,21 @@ class Generator extends Component {
         const lang = this.props.lang;
         let result = ""
         if (this.state.emoji !== "") {
-            result = `${this.state.emoji} : ${this.state.verb} ${this.state.adjective} ${this.state.object} ${this.state.adverb}`;
-        } else {
-            result = `${this.state.verb} ${this.state.adjective} ${this.state.object} ${this.state.adverb}`;
+            result += `${this.state.emoji} : `;
         }
+        if (this.state.verb !== "") {
+            result += this.state.verb
+        }
+        if (this.state.adjective !== "") {
+            result += ` ${this.state.adjective}`
+        }
+        if (this.state.object !== "") {
+            result += ` ${this.state.object}`
+        }
+        if (this.state.adverb !== "") {
+            result += ` ${this.state.adverb}`
+        }
+
         return (
             <Form>
                 <Emoji onUpdate={this.update} lang={lang} />
