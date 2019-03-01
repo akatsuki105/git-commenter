@@ -1,62 +1,137 @@
 {
     "0" : {
-        "en" : "Fix bugs",
+        "en" : "🐛 : Fix bug",
+        "emoji": "🐛",
+        "verb" : "Fix",
+        "adjective" : "",
+        "object" : "bug",
+        "adverb" : [],
         "ja" : "バグ修正"
     },
     "1": {
-        "en": "Initial commit",
+        "en": "🎉 : initial commit",
+        "emoji": "🎉",
+        "verb": "",
+        "adjective": "initial",
+        "object": "commit",
+        "adverb": [],
         "ja": "初めてのコミット"
     },
     "2": {
-        "en": "Remove unused files",
+        "en": "🔥 : Remove unused files",
+        "emoji": "🔥",
+        "verb": "Remove",
+        "adjective": "unused",
+        "object": "files",
+        "adverb": [],
         "ja": "使われていないファイルの削除"
     },
     "3": {
-        "en": "Add empty line",
-        "ja": "空行の追加"
+        "en": "✨ : Add new function",
+        "emoji": "✨",
+        "verb": "Add",
+        "adjective": "new",
+        "object": "function",
+        "adverb": [],
+        "ja": "新機能の追加"
     },
     "4": {
-        "en": "Remove extra whitespace",
+        "en": "🔥 : Remove extra whitespace",
+        "emoji": "🔥",
+        "verb": "Remove",
+        "adjective": "extra",
+        "object": "whitespace",
+        "adverb": [],
         "ja": "余分なスペースの削除"
     },
     "5": {
-        "en": "Rename variables",
+        "en": "🚚 : Rename variable",
+        "emoji": "🚚",
+        "verb": "Rename",
+        "adjective": "",
+        "object": "variable",
+        "adverb": [],
         "ja": "変数の名前を変更"
     },
     "6": {
-        "en": "Change API",
+        "en": "🎨 : Change API",
+        "emoji": "🎨",
+        "verb": "Change",
+        "adjective": "",
+        "object": "API",
+        "adverb": [],
         "ja": "APIを変更"
     },
     "7": {
-        "en": "Fix designs",
+        "en": "💄 : Fix designs",
+        "emoji": "💄",
+        "verb": "Fix",
+        "adjective": "",
+        "object": "designs",
+        "adverb": [],
         "ja": "デザインを修正"
     },
     "8": {
-        "en": "Improve functions",
+        "en": "⚡️ : Improve function",
+        "emoji": "⚡️",
+        "verb": "Improve",
+        "adjective": "",
+        "object": "function",
+        "adverb": [],
         "ja": "機能の改善"
     },
     "9": {
-        "en": "Update README.md",
+        "en": "📝 : Update README.md",
+        "emoji": "📝",
+        "verb": "Update",
+        "adjective": "",
+        "object": "README.md",
+        "adverb": [],
         "ja": "README.mdを更新"
     },
     "10": {
-        "en": "Fix comment",
+        "en": "💬 : Fix comment",
+        "emoji": "💬",
+        "verb": "Fix",
+        "adjective": "",
+        "object": "comment",
+        "adverb": [],
         "ja": "コメントを修正"
     },
     "11": {
-        "en": "Remove debug statement",
+        "en": "🔥 : Remove debug statement",
+        "emoji": "🔥",
+        "verb": "Remove",
+        "adjective": "",
+        "object": "debug statement",
+        "adverb": [],
         "ja": "デバッグ文を削除"
     },
     "12": {
-        "en": "Remove unused variable",
+        "en": "🔥 : Remove unused variable",
+        "emoji": "🔥",
+        "verb": "Remove",
+        "adjective": "unused",
+        "object": "variable",
+        "adverb": [],
         "ja": "使われていない変数の削除"
     },
     "13": {
-        "en": "Remove some dead code",
+        "en": "🔥 : Remove some dead code",
+        "emoji": "🔥",
+        "verb": "Remove",
+        "adjective": "some dead",
+        "object": "code",
+        "adverb": [],
         "ja": "不必要なコードの削除"
     },
     "14": {
-        "en": "Fix typo",
+        "en": "🐛 : Fix typo",
+        "emoji": "🐛",
+        "verb": "Fix",
+        "adjective": "",
+        "object": "typo",
+        "adverb": [],
         "ja": "タイポを修正"
     }
 }

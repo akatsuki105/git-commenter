@@ -7,6 +7,7 @@ import Adjective from "./Adjective";
 import Object from "./Object";
 import Adverb from "./Adverb";
 import Result from "./Result";
+import Template from "./Template";
 
 // Redux
 import { connect } from "react-redux";
@@ -65,7 +66,13 @@ class Generator extends Component {
 
                 <Adverb onUpdate={this.update} lang={lang} />
 
+                <hr/>
+
                 <Result result={result} lang={lang} />
+
+                <hr/>
+
+                <Template lang={lang} />
             </Form>
         );
     }
