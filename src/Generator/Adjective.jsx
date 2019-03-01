@@ -38,7 +38,7 @@ class Adjective extends Component {
     render() {
         return (
             <Row form>
-                <Col md={12}><Label>Adjective</Label></Col>
+                <Col md={12}><Label>{"✨ Adjective"}</Label></Col>
                 <Col md={6}>
                     <FormGroup>
                         <Input type="select" name="adjectiveTemplate" onChange={this.handleChange} value={this.state.adjectiveTemplate} >

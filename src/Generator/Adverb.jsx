@@ -64,7 +64,7 @@ class Adverb extends Component {
         return (
             <Row>
                 <Col md={12}>
-                    <Label for="verb">Adverb</Label>
+                    <Label for="verb">{"💎 Adverb"}</Label>
                     <FormText color="muted">
                         {(this.props.lang === "en") ? "An adverb clause that qualifies the commit content." : "コミット内容を修飾する副詞節です。"}
                     </FormText>

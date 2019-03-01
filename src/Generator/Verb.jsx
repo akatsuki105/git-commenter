@@ -38,7 +38,7 @@ class Verb extends Component {
     render() {
         return (
             <Row form>
-                <Col md={12}><Label>Verb</Label></Col>
+                <Col md={12}><Label>{"🚵🏼‍ Verb"}</Label></Col>
                 <Col md={6}>
                     <FormGroup>
                         <Input type="select" name="verbTemplate" onChange={this.handleChange} value={this.state.verbTemplate} >

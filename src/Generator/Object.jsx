@@ -38,7 +38,7 @@ class CommitObject extends Component {
     render() {
         return (
             <Row form>
-                <Col md={12}><Label>Object</Label></Col>
+                <Col md={12}><Label>{"⚽️ Object"}</Label></Col>
                 <Col md={6}>
                     <FormGroup>
                         <Input type="select" name="objectTemplate" onChange={this.handleChange} value={this.state.objectTemplate} >

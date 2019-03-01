@@ -26,7 +26,7 @@ class Emoji extends Component {
     render() {
         return (
             <FormGroup>
-                <Label for="emoji">{(this.props.lang === "en") ? "Emoji" : "絵文字"}</Label>
+                <Label for="emoji">{"😉 Emoji"}</Label>
                 <Input type="select" name="emoji" onChange={this.handleChange}>
                     <option value="">{(this.props.lang === "en") ? "commit category" : "カテゴリ"}</option>
                     {
