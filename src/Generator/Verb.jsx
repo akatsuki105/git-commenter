@@ -47,7 +47,7 @@ class Verb extends Component {
                         }
                     </Input>
                     <FormText color="muted">
-                        {(this.props.lang === "en") ? "What is often used is in the select box." : "よく利用されるものがセレクトボックスの中に入っています。"}
+                        {(this.props.lang === "en") ? "What is often used is in the select box." : "コミットメッセージの中でよく利用されるものがテンプレの中に入っています。"}
                     </FormText>
                 </FormGroup>
             )

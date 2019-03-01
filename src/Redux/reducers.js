@@ -5,7 +5,8 @@ export function message(state = {
     verb: "",
     adjective: "",
     object: "",
-    adverb: ""
+    adverbList: [],
+    counter: 0
 }, action) {
     switch (action.type) {
         case "WRITE_ELEMENT":
@@ -18,7 +19,8 @@ export function message(state = {
                 verb: action.verb,
                 adjective: action.adjective,
                 object: action.object,
-                adverb: action.adverb
+                adverbList: action.adverbList,
+                counter: 0
             });
         default:
             return state;

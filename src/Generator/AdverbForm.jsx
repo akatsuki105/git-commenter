@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Row, Col, FormGroup, Label, Input } from 'reactstrap';
 
 import prepositionData from '../data/preposition.json';
-import nounData from '../data/noun.json';
 
 // Redux
 import { connect } from "react-redux";
@@ -56,7 +55,7 @@ class AdverbForm extends Component {
             return (
                 <FormGroup row>
                     <Label for="prep" sm={1}>Prep.</Label>
-                    <Col md={5}>
+                    <Col md={4}>
                         <FormGroup>
                             <Input type="select" name="prep" onChange={this.handleChange} value={this.state.prep} >
                                 <option value=""></option>
@@ -72,18 +71,9 @@ class AdverbForm extends Component {
                     </Col>
 
                     <Label for="prep" sm={1}>Object</Label>
-                    <Col md={5}>
+                    <Col md={6}>
                         <FormGroup>
-                            <Input type="select" name="pObject" onChange={this.handleChange} value={this.state.pObject} >
-                                <option value=""></option>
-                                {
-                                    Object.keys(nounData).map((noun) => {
-                                        return (
-                                            <option value={noun} key={noun}>{(this.props.lang === "en") ? noun : `${noun} ${nounData[noun].ja}`}</option>
-                                        )
-                                    })
-                                }
-                            </Input>
+                            <Input type="text" name="pObject" onChange={this.handleChange} value={this.state.pObject} />
                         </FormGroup>
                     </Col>
                 </FormGroup>

@@ -16,7 +16,7 @@ class Generator extends Component {
 
     render() {
         const message = this.props.message;
-        const lang = this.props.lang;
+        console.log("message: ", message);
         let result = ""
         if (message.emoji !== "") {
             result += `${message.emoji} : `;
@@ -30,8 +30,8 @@ class Generator extends Component {
         if (message.object !== "") {
             result += ` ${message.object}`
         }
-        if (message.adverb !== "") {
-            result += ` ${message.adverb}`
+        if (message.adverbList.length > 0) {
+            result += ` ${message.adverbList.join(" ")}`
         }
 
         console.log("result: ", result);

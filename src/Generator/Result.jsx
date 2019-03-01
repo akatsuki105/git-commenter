@@ -4,7 +4,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 // Redux
 import { connect } from "react-redux";
-import {  } from "../Redux/actions";
+import { overwrite } from "../Redux/actions";
 
 class Result extends Component {
 
@@ -49,7 +49,15 @@ class Result extends Component {
     }
 
     reset() {
-
+        const action = {
+            emoji: "",
+            verb: "",
+            adjective: "",
+            object: "",
+            adverbList: [],
+            counter: 0
+        }
+        this.props.dispatch(overwrite(action));
     }
 
     render() {

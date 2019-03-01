@@ -12,11 +12,6 @@ class Adverb extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            counter: 0,
-            adverbList: []
-        };
-
         this.updateAdverb = this.updateAdverb.bind(this);
         this.renderAdverb = this.renderAdverb.bind(this);
         this.addAdverb = this.addAdverb.bind(this);
@@ -24,16 +19,16 @@ class Adverb extends Component {
     }
 
     updateAdverb(id, adverb) {
-        let adverbList = this.state.adverbList;
+        let adverbList = this.props.adverbList;
         adverbList[id] = adverb;
 
-        this.props.dispatch(addElement("adverb", adverbList.join(" ")));
+        this.props.dispatch(addElement("adverbList", adverbList));
     }
 
     renderAdverb() {
         const adverbComponent = [];
         
-        for (let i = 0; i < this.state.counter; i++) {
+        for (let i = 0; i < this.props.counter; i++) {
             adverbComponent.push(<AdverbFrom key={i} id={i} onUpdate={this.updateAdverb} />)
         }
 
@@ -41,23 +36,18 @@ class Adverb extends Component {
     }
 
     addAdverb() {
-        let adverbList = this.state.adverbList;
-        adverbList.push([])
-        this.setState({
-            counter: this.state.counter + 1,
-            adverbList: adverbList
-        })
+        let adverbList = this.props.adverbList;
+        adverbList.push([]);
+        this.props.dispatch(addElement("adverbList", adverbList));
+        this.props.dispatch(addElement("counter", this.props.counter + 1));
     }
 
     removeAdverb() {
-        if (this.state.counter > 0) {
-            let adverbList = this.state.adverbList;
+        if (this.props.counter > 0) {
+            let adverbList = this.props.adverbList;
             adverbList.pop();
-            this.setState({
-                counter: this.state.counter - 1,
-                adverbList: adverbList
-            })
-            this.props.dispatch(addElement("adverb", adverbList.join(" ")));
+            this.props.dispatch(addElement("adverbList", adverbList));
+            this.props.dispatch(addElement("counter", this.props.counter - 1));
         }
     }
 
@@ -91,7 +81,8 @@ class Adverb extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        adverb: state.message.adverb,
+        adverbList: state.message.adverbList,
+        counter: state.message.counter,
         lang: state.lang.lang
     };
 };

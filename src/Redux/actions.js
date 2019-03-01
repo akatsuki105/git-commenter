@@ -6,10 +6,10 @@ export function addElement(key, value) {
     });
 }
 
-export function overwrite({emoji, verb, adjective, object, adverb}) {
+export function overwrite({ emoji, verb, adjective, object, adverbList}) {
     return ({
         type: "OVERWRITE",
-        emoji, verb, adjective, object, adverb
+        emoji, verb, adjective, object, adverbList
     });
 }
 
