@@ -38,23 +38,23 @@ class Generator extends Component {
 
         return (
             <Form>
-                <Emoji lang={lang} />
+                <Emoji />
 
-                <Verb lang={lang} />
+                <Verb />
 
-                <Adjective lang={lang} />
+                <Adjective />
 
-                <Object lang={lang} />
+                <Object />
 
-                <Adverb lang={lang} />
-
-                <hr/>
-
-                <Result result={result} lang={lang} />
+                <Adverb />
 
                 <hr/>
 
-                <Template lang={lang} />
+                <Result result={result} />
+
+                <hr/>
+
+                <Template/>
             </Form>
         );
     }

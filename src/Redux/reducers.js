@@ -8,7 +8,7 @@ export function message(state = {
     adverb: ""
 }, action) {
     switch (action.type) {
-        case "ADD_ELEMENT":
+        case "WRITE_ELEMENT":
             return Object.assign({}, state, {
                 [action.key] : action.value
             });

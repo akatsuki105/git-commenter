@@ -5,6 +5,10 @@ import templateData from '../data/template.json';
 
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
+// Redux
+import { connect } from "react-redux";
+import {  } from "../Redux/actions";
+
 class Template extends Component {
 
     constructor(props) {
@@ -71,4 +75,10 @@ class Template extends Component {
     }
 }
 
-export default Template;
+const mapStateToProps = (state) => {
+    return {
+        lang: state.lang.lang
+    };
+};
+
+export default connect(mapStateToProps)(Template);

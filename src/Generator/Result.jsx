@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Button, FormGroup, Label, Input, Fade } from 'reactstrap';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
+// Redux
+import { connect } from "react-redux";
+import {  } from "../Redux/actions";
+
 class Result extends Component {
 
     constructor(props) {
@@ -73,4 +77,10 @@ class Result extends Component {
     }
 }
 
-export default Result;
+const mapStateToProps = (state) => {
+    return {
+        lang: state.lang.lang
+    };
+};
+
+export default connect(mapStateToProps)(Result);

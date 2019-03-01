@@ -4,6 +4,9 @@ import { Col, FormGroup, Label, Input } from 'reactstrap';
 import prepositionData from '../data/preposition.json';
 import nounData from '../data/noun.json';
 
+// Redux
+import { connect } from "react-redux";
+
 class AdverbForm extends Component {
 
     constructor(props) {
@@ -57,7 +60,7 @@ class AdverbForm extends Component {
         return (
             <Col md={12}>
                 <FormGroup row>
-                
+
                     <Label for="prep" sm={1}>Prep.</Label>
                     <Col md={2}>
                         <FormGroup>
@@ -107,4 +110,10 @@ class AdverbForm extends Component {
     }
 }
 
-export default AdverbForm;
+const mapStateToProps = (state) => {
+    return {
+        lang: state.lang.lang
+    };
+};
+
+export default connect(mapStateToProps)(AdverbForm);

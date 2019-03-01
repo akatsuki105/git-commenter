@@ -66,7 +66,8 @@ class Adjective extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        adjective: state.message.adjective
+        adjective: state.message.adjective,
+        lang: state.lang.lang
     };
 };
 

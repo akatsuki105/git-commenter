@@ -43,7 +43,8 @@ class Emoji extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        emoji: state.message.emoji
+        emoji: state.message.emoji,
+        lang: state.lang.lang
     };
 };
 

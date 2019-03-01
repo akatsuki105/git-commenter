@@ -1,6 +1,6 @@
 export function addElement(key, value) {
     return ({
-        type: "ADD_ELEMENT",
+        type: "WRITE_ELEMENT",
         key,
         value
     });

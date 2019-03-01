@@ -91,7 +91,8 @@ class Adverb extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        adverb: state.message.adverb
+        adverb: state.message.adverb,
+        lang: state.lang.lang
     };
 };
 

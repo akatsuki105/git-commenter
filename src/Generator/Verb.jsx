@@ -72,7 +72,8 @@ class Verb extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        verb: state.message.verb
+        verb: state.message.verb,
+        lang: state.lang.lang
     };
 };
 

@@ -66,7 +66,8 @@ class CommitObject extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        object: state.message.object
+        object: state.message.object,
+        lang: state.lang.lang
     };
 };
 
