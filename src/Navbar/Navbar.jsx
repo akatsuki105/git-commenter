@@ -4,6 +4,7 @@ import { Navbar, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, Dropd
 
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import logo from "./logo.png";
 
 // Redux
 import { connect } from "react-redux";
@@ -24,7 +25,10 @@ class AppNavbar extends Component {
         return (
             <div className="header">
                 <Navbar light expand="md">
-                    <NavbarBrand tag={Link} to="/">Git Commenter</NavbarBrand>
+                    <NavbarBrand tag={Link} to="/">
+                        <img src={logo} width="30" height="30" className="d-inline-block align-top mr-1" alt=""></img>
+                        Git Commenter
+                    </NavbarBrand>
                     <Nav className="ml-auto" navbar>
 
                         <NavItem>
