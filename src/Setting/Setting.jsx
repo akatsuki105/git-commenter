@@ -1,33 +1,27 @@
 import React, { Component } from "react";
 
+import Register from "./Register";
+
 import { Row, Col } from "reactstrap";
 
+// Redux
+import { connect } from "react-redux";
+
 class Setting extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-        }
-
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(e) {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    }
 
     render() {
         return (
             <Row>
-                <Col xs="12" className="py-3 my-2">
-                    
-                </Col>
+                <Col xs={12}><h2>Setting</h2></Col>
+                <Register data="object" />
             </Row>
         );
     }
 }
 
-export default Setting;
+const mapStateToProps = (state) => {
+    return {
+    };
+};
+
+export default connect(mapStateToProps)(Setting);

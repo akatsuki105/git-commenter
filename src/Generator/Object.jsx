@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col, FormGroup, Label, Input } from 'reactstrap';
-
 import objectData from '../data/noun.json';
+import { fetchTemplate } from "../util/util";
 
 // Redux
 import { connect } from "react-redux";
@@ -38,6 +38,13 @@ class CommitObject extends Component {
                 <FormGroup>
                     <Input type="select" name="object" onChange={this.handleChange} value={this.props.object} >
                         <option value=""></option>
+                        {
+                            fetchTemplate("object").map((element) => {
+                                return (
+                                    <option value={element} key={element}>{element}</option>
+                                )
+                            })
+                        }
                         {
                             Object.keys(objectData).map((object) => {
                                 return (
