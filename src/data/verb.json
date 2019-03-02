@@ -93,5 +93,10 @@
         "frequency": "20",
         "ja": "避ける",
         "phrase": [["o1", "to", "v1"]]
+    },
+    "Improve" : {
+        "frequency": "21",
+        "ja": "改善する",
+        "phrase": [["o1", "to", "v1"]]
     }
 }
