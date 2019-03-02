@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Row, Col, Button, FormGroup, Label, Input, Fade } from 'reactstrap';
-
 import templateData from '../data/template.json';
-
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { fetchTemplate } from "../util/util";
 
 // Redux
 import { connect } from "react-redux";
@@ -52,6 +51,13 @@ class Template extends Component {
                     <FormGroup>
                         <Input type="select" name="template" onChange={this.handleChange}>
                             <option value="">message template</option>
+                            {
+                                fetchTemplate("message").map((element) => {
+                                    return (
+                                        <option value={element} key={element}>{element}</option>
+                                    )
+                                })
+                            }
                             {
                                 Object.keys(templateData).map((id) => {
                                     return (

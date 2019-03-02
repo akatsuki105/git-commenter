@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Row, Col, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 import verbData from '../data/verb.json';
+import { fetchTemplate } from "../util/util";
 
 // Redux
 import { connect } from "react-redux";
@@ -38,6 +39,13 @@ class Verb extends Component {
                 <FormGroup>
                     <Input type="select" name="verb" onChange={this.handleChange} value={this.props.verb} >
                         <option value=""></option>
+                        {
+                            fetchTemplate("verb").map((element) => {
+                                return (
+                                    <option value={element} key={element}>{element}</option>
+                                )
+                            })
+                        }
                         {
                             Object.keys(verbData).map((verb) => {
                                 return (

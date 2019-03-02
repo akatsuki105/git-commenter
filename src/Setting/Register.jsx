@@ -25,9 +25,9 @@ class Register extends Component {
     }
 
     add() {
-        let template = fetchTemplate("object");
+        let template = fetchTemplate(this.props.data);
         template.push(this.state.addTarget);
-        localStorage.setItem("object", JSON.stringify(template));
+        localStorage.setItem(this.props.data, JSON.stringify(template));
 
         this.setState({
             addTarget: ""
@@ -35,9 +35,9 @@ class Register extends Component {
     }
 
     remove() {
-        const template = fetchTemplate("object");
+        const template = fetchTemplate(this.props.data);
         const newTemplate = template.filter(n => n !== this.state.removeTarget);
-        localStorage.setItem("object", JSON.stringify(newTemplate));
+        localStorage.setItem(this.props.data, JSON.stringify(newTemplate));
 
         this.setState({
             removeTarget: ""
@@ -47,6 +47,7 @@ class Register extends Component {
     render() {
         return (
             <React.Fragment>
+                <Col xs={12}><h4>{this.props.data} Template</h4></Col>
                 <Col xs={12} className="my-1">
                     <Form>
                         <FormGroup>
@@ -59,7 +60,7 @@ class Register extends Component {
                         <Button color="primary" onClick={this.add}>Add</Button>
                     </Form>
                 </Col>
-                <Col xs={12} className="my-1">
+                <Col xs={12} className="mt-1 mb-4">
                     <Form>
                         <FormGroup>
                             <Label for="removeTarget">Remove {this.props.data} from template</Label>

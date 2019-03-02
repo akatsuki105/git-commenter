@@ -55,7 +55,7 @@ class AdverbForm extends Component {
             return (
                 <FormGroup row>
                     <Label for="prep" sm={1}>Prep.</Label>
-                    <Col md={4}>
+                    <Col md={3}>
                         <FormGroup>
                             <Input type="select" name="prep" onChange={this.handleChange} value={this.state.prep} >
                                 <option value=""></option>
@@ -71,7 +71,7 @@ class AdverbForm extends Component {
                     </Col>
 
                     <Label for="prep" sm={1}>Object</Label>
-                    <Col md={6}>
+                    <Col md={7}>
                         <FormGroup>
                             <Input type="text" name="pObject" onChange={this.handleChange} value={this.state.pObject} />
                         </FormGroup>

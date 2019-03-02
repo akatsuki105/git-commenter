@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, Label, Input, Fade } from 'reactstrap';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { fetchTemplate } from "../util/util";
 
 // Redux
 import { connect } from "react-redux";
@@ -36,16 +37,10 @@ class Result extends Component {
     // 出来上がったコミットメッセージをテンプレとして保存しておく機能
     register() {
         const message = this.props.result;
-        console.log(message);
         
-        let userTemplate = JSON.parse(localStorage.getItem("userTemplate"));
-
-        if (userTemplate) {
-            userTemplate.push(message);
-            localStorage.setItem("userTemplate", JSON.stringify(userTemplate));
-        } else {
-            localStorage.setItem("userTemplate", JSON.stringify([message]));
-        }
+        let messageTemplate = fetchTemplate("message");
+        messageTemplate.push(message);
+        localStorage.setItem("message", JSON.stringify(messageTemplate));
     }
 
     reset() {

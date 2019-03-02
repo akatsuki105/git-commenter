@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Row, Col, FormGroup, Label, Input } from 'reactstrap';
 
 import adjectiveData from '../data/adjective.json';
+import { fetchTemplate } from "../util/util";
 
 // Redux
 import { connect } from "react-redux";
@@ -38,6 +39,13 @@ class Adjective extends Component {
                 <FormGroup>
                     <Input type="select" name="adjective" onChange={this.handleChange} value={this.props.adjective} >
                         <option value=""></option>
+                        {
+                            fetchTemplate("adjective").map((element) => {
+                                return (
+                                    <option value={element} key={element}>{element}</option>
+                                )
+                            })
+                        }
                         {
                             Object.keys(adjectiveData).map((adjective) => {
                                 return (
