@@ -48,6 +48,7 @@
 - 絵文字も入れたい [参照1](https://gitmoji.carloscuesta.me/) [参照2](https://getemoji.com/)
 - テンプレファイルの読み込みも可能にしたい [参照](https://yuu.1000quu.com/commit_template_for_pictogram_commitment)
 - テンプレメッセージを用意しておくといいかも
+- 空行 + 理由の行も設けたい
 
 ##### 2
 - 機能を使われた回数とかをDynamoでカウントできるようにしたら面白いかも(プライバシーONOFFは必要)
