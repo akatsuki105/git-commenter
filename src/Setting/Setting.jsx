@@ -13,10 +13,11 @@ class Setting extends Component {
         return (
             <Row>
                 <Col xs={12} className="mb-3"><h2>⚒ Setting 🛠</h2></Col>
-                <Register data="verb" />
-                <Register data="adjective" />
-                <Register data="object" />
-                <Register data="message" />
+                <Register data="verb" emoji="🚵🏼‍" />
+                <Register data="adjective" emoji="✨" />
+                <Register data="object" emoji="⚽️" />
+                <Register data="reason" emoji="❓" />
+                <Register data="message" emoji="🖨" />
             </Row>
         );
     }

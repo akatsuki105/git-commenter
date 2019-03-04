@@ -47,7 +47,7 @@ class Register extends Component {
     render() {
         return (
             <React.Fragment>
-                <Col xs={12}><h4>{this.props.data} Template</h4></Col>
+                <Col xs={12}><h4>{this.props.emoji} {this.props.data} Template</h4></Col>
                 <Col xs={12} className="my-1">
                     <Form>
                         <FormGroup>
