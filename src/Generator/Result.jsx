@@ -38,9 +38,11 @@ class Result extends Component {
     register() {
         const message = this.props.result;
         
-        let messageTemplate = fetchTemplate("message");
-        messageTemplate.push(message);
-        localStorage.setItem("message", JSON.stringify(messageTemplate));
+        if (message !== "") {
+            let messageTemplate = fetchTemplate("message");
+            messageTemplate.push(message);
+            localStorage.setItem("message", JSON.stringify(messageTemplate));
+        }
     }
 
     reset() {
