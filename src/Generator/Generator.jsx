@@ -5,8 +5,9 @@ import Emoji from "./Emoji";
 import Verb from "./Verb";
 import Adjective from "./Adjective";
 import Object from "./Object";
-import Adverb from "./Adverb";
+import Modifier from "./Modifier";
 import Result from "./Result";
+import Reason from "./Reason";
 import Template from "./Template";
 
 // Redux
@@ -15,24 +16,6 @@ import { connect } from "react-redux";
 class Generator extends Component {
 
     render() {
-        const message = this.props.message;
-        let result = ""
-        if (message.emoji !== "") {
-            result += `${message.emoji} : `;
-        }
-        if (message.verb !== "") {
-            result += message.verb
-        }
-        if (message.adjective !== "") {
-            result += ` ${message.adjective}`
-        }
-        if (message.object !== "") {
-            result += ` ${message.object}`
-        }
-        if (message.adverbList.length > 0) {
-            result += ` ${message.adverbList.join(" ")}`
-        }
-
         return (
             <Form>
                 <Emoji />
@@ -43,11 +26,13 @@ class Generator extends Component {
 
                 <Object />
 
-                <Adverb />
+                <Modifier />
+
+                <Reason />
 
                 <hr/>
 
-                <Result result={result} />
+                <Result />
 
                 <hr/>
 
@@ -59,7 +44,6 @@ class Generator extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        message: state.message,
         lang: state.lang.lang
     };
 };

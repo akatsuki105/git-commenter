@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, Label, Input, Fade } from 'reactstrap';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { fetchTemplate } from "../util/util";
+import { fetchTemplate, constructMessage } from "../util/util";
 
 // Redux
 import { connect } from "react-redux";
@@ -36,12 +36,19 @@ class Result extends Component {
 
     // 出来上がったコミットメッセージをテンプレとして保存しておく機能
     register() {
-        const message = this.props.result;
-        
-        if (message !== "") {
-            let messageTemplate = fetchTemplate("message");
-            messageTemplate.push(message);
-            localStorage.setItem("message", JSON.stringify(messageTemplate));
+        try {
+            const message = this.props.message;
+
+            let template = fetchTemplate("message");
+            template.push(message);
+            localStorage.setItem("message", JSON.stringify(template));
+
+            window.alert("メッセージの登録に成功しました");
+
+            this.reset();
+        } catch (error) {
+            console.error(error);
+            window.alert("メッセージの登録に失敗しました");
         }
     }
 
@@ -51,22 +58,24 @@ class Result extends Component {
             verb: "",
             adjective: "",
             object: "",
-            adverbList: [],
-            counter: 0
+            modifier: "",
+            reason: ""
         }
         this.props.dispatch(overwrite(action));
     }
 
     render() {
+        const message = this.props.message;
+        let result = constructMessage(message);
         return (
             <React.Fragment>
 
                 <FormGroup className="py-3">
                     <Label for="gitComment">{"🎊 Git Comment"}</Label>
-                    <Input type="textarea" name="gitComment" disabled value={this.props.result}></Input>
+                    <Input type="textarea" name="gitComment" disabled value={result} style={{ resize: "horizontal", height: "100px"}}></Input>
                 </FormGroup>
 
-                <CopyToClipboard text={this.props.result} onCopy={this.copyAlert}>
+                <CopyToClipboard text={result} onCopy={this.copyAlert}>
                     <Button color="primary">Copy</Button>
                 </CopyToClipboard>
 
@@ -84,6 +93,7 @@ class Result extends Component {
 
 const mapStateToProps = (state) => {
     return {
+        message: state.message,
         lang: state.lang.lang
     };
 };
