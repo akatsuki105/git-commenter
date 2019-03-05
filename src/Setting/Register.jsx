@@ -25,13 +25,15 @@ class Register extends Component {
     }
 
     add() {
-        let template = fetchTemplate(this.props.data);
-        template.push(this.state.addTarget);
-        localStorage.setItem(this.props.data, JSON.stringify(template));
+        if (this.state.addTarget !== "") {
+            let template = fetchTemplate(this.props.data);
+            template.push(this.state.addTarget);
+            localStorage.setItem(this.props.data, JSON.stringify(template));
 
-        this.setState({
-            addTarget: ""
-        });
+            this.setState({
+                addTarget: ""
+            });
+        }
     }
 
     remove() {
@@ -64,7 +66,7 @@ class Register extends Component {
                     <Form>
                         <FormGroup>
                             <Label for="removeTarget">Remove {this.props.data} from template</Label>
-                            <Input type="select" name="removeTarget" onChange={this.handleChange} value={this.props.removeTarget} >
+                            <Input type="select" name="removeTarget" onChange={this.handleChange} value={this.state.removeTarget} >
                                 <option value=""></option>
                                 {
                                     fetchTemplate(this.props.data).map((element) => {
