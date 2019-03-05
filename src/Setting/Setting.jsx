@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Register from "./Register";
+import MessageRegister from "./MessageRegister";
 
 import { Row, Col } from "reactstrap";
 
@@ -16,8 +17,9 @@ class Setting extends Component {
                 <Register data="verb" emoji="🚵🏼‍" />
                 <Register data="adjective" emoji="✨" />
                 <Register data="object" emoji="⚽️" />
+                <Register data="modifier" emoji="💎" />
                 <Register data="reason" emoji="❓" />
-                <Register data="message" emoji="🖨" />
+                <MessageRegister />
             </Row>
         );
     }
