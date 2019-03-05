@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Row, Col, Button, FormGroup, Label, Input, Fade } from 'reactstrap';
+import { Row, Col, FormGroup, Label, Input } from 'reactstrap';
 import templateData from '../data/template.json';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { fetchTemplate } from "../util/util";
+import { fetchTemplate, constructMessage } from "../util/util";
 
 // Redux
 import { connect } from "react-redux";
-import {  } from "../Redux/actions";
+import { overwrite } from "../Redux/actions";
 
 class Template extends Component {
 
@@ -30,9 +29,36 @@ class Template extends Component {
     }
 
     handleChange(e) {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
+        if (e.target.name === "template") {
+            const initial = e.target.value[0];
+
+            let element;
+            if (initial === "m") {
+                let id = Number(((e.target.value).split("#"))[1]);
+                let template = fetchTemplate("message");
+                element = template[id];
+            } else if (initial === "t") {
+                let id = Number(((e.target.value).split("#"))[1]);
+                element = templateData[id];
+            } else {
+                element = {
+                    emoji: "", verb: "", adjective: "", object: "", modifier: "", reason: ""
+                };
+            }
+            const message = {
+                emoji: element.emoji,
+                verb: element.verb,
+                adjective: element.adjective,
+                object: element.object,
+                modifier: element.modifier,
+                reason: element.reason
+            }
+            this.props.dispatch(overwrite(message));
+
+            this.setState({
+                template: constructMessage(message)
+            });
+        }
     }
 
     copyAlert() {
@@ -47,34 +73,26 @@ class Template extends Component {
         return (
             <Row form>
                 <Col xs={12}><Label for="template">{"🖨 Template"}</Label></Col>
-                <Col xs={11}>
+                <Col xs={12}>
                     <FormGroup>
-                        <Input type="select" name="template" onChange={this.handleChange}>
+                        <Input type="select" name="template" onChange={this.handleChange} value={this.state.template}>
                             <option value="">message template</option>
                             {
-                                fetchTemplate("message").map((element) => {
+                                fetchTemplate("message").map((element, id) => {
                                     return (
-                                        <option value={element} key={element}>{element}</option>
+                                        <option value={`m#${id}`} key={id}>{constructMessage(element)}</option>
                                     )
                                 })
                             }
                             {
                                 Object.keys(templateData).map((id) => {
                                     return (
-                                        <option value={templateData[id].en} key={id}>{(this.props.lang === "en") ? templateData[id].en : `${templateData[id].en} ${templateData[id].ja}`}</option>
+                                        <option value={`t#${id}`} key={id}>{(this.props.lang === "en") ? templateData[id].en : `${templateData[id].en} ${templateData[id].ja}`}</option>
                                     )
                                 })
                             }
                         </Input>
                     </FormGroup>
-                </Col>
-                <Col xs={1}>
-                    <CopyToClipboard text={this.state.template} onCopy={this.copyAlert}>
-                        <Button color="primary">Copy</Button>
-                    </CopyToClipboard>
-                    <Fade in={this.state.fadeIn} className="pt-2">
-                        Copied!
-                    </Fade>
                 </Col>
             </Row>
         );

@@ -5,7 +5,8 @@
         "verb" : "Fix",
         "adjective" : "",
         "object" : "bug",
-        "adverb" : [],
+        "modifier" : "",
+        "reason": "",
         "ja" : "バグ修正"
     },
     "1": {
@@ -14,7 +15,8 @@
         "verb": "",
         "adjective": "initial",
         "object": "commit",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "初めてのコミット"
     },
     "2": {
@@ -23,7 +25,8 @@
         "verb": "Remove",
         "adjective": "unused",
         "object": "files",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "使われていないファイルの削除"
     },
     "3": {
@@ -32,7 +35,8 @@
         "verb": "Add",
         "adjective": "new",
         "object": "function",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "新機能の追加"
     },
     "4": {
@@ -41,7 +45,8 @@
         "verb": "Remove",
         "adjective": "extra",
         "object": "whitespace",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "余分なスペースの削除"
     },
     "5": {
@@ -50,7 +55,8 @@
         "verb": "Rename",
         "adjective": "",
         "object": "variable",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "変数の名前を変更"
     },
     "6": {
@@ -59,7 +65,8 @@
         "verb": "Change",
         "adjective": "",
         "object": "API",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "APIを変更"
     },
     "7": {
@@ -68,7 +75,8 @@
         "verb": "Fix",
         "adjective": "",
         "object": "designs",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "デザインを修正"
     },
     "8": {
@@ -77,7 +85,8 @@
         "verb": "Improve",
         "adjective": "",
         "object": "function",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "機能の改善"
     },
     "9": {
@@ -86,7 +95,8 @@
         "verb": "Update",
         "adjective": "",
         "object": "README.md",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "README.mdを更新"
     },
     "10": {
@@ -95,7 +105,8 @@
         "verb": "Fix",
         "adjective": "",
         "object": "comment",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "コメントを修正"
     },
     "11": {
@@ -104,7 +115,8 @@
         "verb": "Remove",
         "adjective": "",
         "object": "debug statement",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "デバッグ文を削除"
     },
     "12": {
@@ -113,7 +125,8 @@
         "verb": "Remove",
         "adjective": "unused",
         "object": "variable",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "使われていない変数の削除"
     },
     "13": {
@@ -122,7 +135,8 @@
         "verb": "Remove",
         "adjective": "some dead",
         "object": "code",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "不必要なコードの削除"
     },
     "14": {
@@ -131,7 +145,8 @@
         "verb": "Fix",
         "adjective": "",
         "object": "typo",
-        "adverb": [],
+        "modifier" : "",
+        "reason": "",
         "ja": "タイポを修正"
     }
 }
