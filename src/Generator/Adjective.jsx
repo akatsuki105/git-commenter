@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, FormGroup, Label, Input } from 'reactstrap';
+import { Row, Col, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 import adjectiveData from '../data/adjective.json';
 import { fetchTemplate } from "../util/util";
@@ -14,7 +14,7 @@ class Adjective extends Component {
         super(props);
 
         this.state = {
-            input: "select"
+            input: "form"
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -54,12 +54,18 @@ class Adjective extends Component {
                             })
                         }
                     </Input>
+                    <FormText color="muted">
+                        {(this.props.lang === "en") ? "What is often used is in the select box." : "コミットメッセージの中でよく利用されるものがテンプレの中に入っています。"}
+                    </FormText>
                 </FormGroup>
             )
         } else if (this.state.input === "form") {
             return (
                 <FormGroup>
                     <Input type="text" name="adjective" onChange={this.handleChange} value={this.props.adjective} />
+                    <FormText color="muted">
+                        {(this.props.lang === "en") ? "User can enter freely." : "ユーザーが自由に入力できます。"}
+                    </FormText>
                 </FormGroup>
             )
         }
