@@ -53,10 +53,11 @@ class Template extends Component {
                 modifier: element.modifier,
                 reason: element.reason
             }
+
             this.props.dispatch(overwrite(message));
 
             this.setState({
-                template: constructMessage(message)
+                template: e.target.value
             });
         }
     }
