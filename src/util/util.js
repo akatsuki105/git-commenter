@@ -25,7 +25,7 @@ export function constructMessage({ emoji = "", verb = "", adjective = "", object
         result += ` ${modifier}`
     }
     if (reason !== "") {
-        result += `\n\n❓ : ${reason}`
+        result += `\n\n${reason}`
     }
     return result;
 }
