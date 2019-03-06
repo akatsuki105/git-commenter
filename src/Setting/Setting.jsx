@@ -13,7 +13,7 @@ class Setting extends Component {
     render() {
         return (
             <Row>
-                <Col xs={12} className="mb-3"><h2>⚒ Setting 🛠</h2></Col>
+                <Col xs={12} className="mb-3"><h3>⚒ Setting 🛠</h3></Col>
                 <Register data="verb" emoji="🚵🏼‍" />
                 <Register data="adjective" emoji="✨" />
                 <Register data="object" emoji="⚽️" />
