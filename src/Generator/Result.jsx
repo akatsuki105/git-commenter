@@ -64,6 +64,10 @@ class Result extends Component {
         this.props.dispatch(overwrite(action));
     }
 
+    componentWillUnmount() {
+        this.reset();
+    }
+
     render() {
         const message = this.props.message;
         let result = constructMessage(message);
