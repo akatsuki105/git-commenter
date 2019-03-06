@@ -64,7 +64,7 @@ class Adjective extends Component {
                 <FormGroup>
                     <Input type="text" name="adjective" onChange={this.handleChange} value={this.props.adjective} />
                     <FormText color="muted">
-                        {(this.props.lang === "en") ? "User can enter freely." : "ユーザーが自由に入力できます。"}
+                        {(this.props.lang === "en") ? "This is where you enter words that qualify Object. You do not have to enter if you do not need it.  e.g. new, unused " : "コミットの対象(Object)を修飾する語句を入力するところです。必要がないならば無理に入力する必要はありません。 例:「new」,「unused」"}
                     </FormText>
                 </FormGroup>
             )

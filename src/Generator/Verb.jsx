@@ -55,7 +55,7 @@ class Verb extends Component {
                         }
                     </Input>
                     <FormText color="muted">
-                        {(this.props.lang === "en") ? "What is often used is in the select box." : "コミットメッセージの中でよく利用されるものがテンプレの中に入っています。"}
+                        {(this.props.lang === "en") ? "What is often used is in the select box." : "コミット内容を入力するところです。例 : 何かを追加した=> 「Add」 テンプレの中にはコミットメッセージの中でよく利用されるものが入っています。"}
                     </FormText>
                 </FormGroup>
             )
@@ -64,7 +64,7 @@ class Verb extends Component {
                 <FormGroup>
                     <Input type="text" name="verb" onChange={this.handleChange} value={this.props.verb} />
                     <FormText color="muted">
-                        {(this.props.lang === "en") ? "User can enter freely." : "ユーザーが自由に入力できます。"}
+                        {(this.props.lang === "en") ? "User can enter freely." : "コミット内容を入力するところです。例 : 何かを追加した=> 「Add」 フォームではユーザーが自由に入力できます。"}
                     </FormText>
                 </FormGroup>
             )
