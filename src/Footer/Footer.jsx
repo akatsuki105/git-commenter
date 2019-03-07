@@ -10,7 +10,7 @@ class AppFooter extends Component {
                 <div className="container">
                     <span className="text-muted">{"Git Commenter"}</span>
                     <div className="py-1">
-                        <span className="px-1"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className="twitter-share-button" data-text="Git Commenter" data-url="http://git-commenter.s3-website-ap-northeast-1.amazonaws.com" data-show-count="false">Tweet</a></span>
+                        <span className="px-1"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className="twitter-share-button" data-text="Git Commenter" data-url="http://git-commenter.com" data-show-count="false">Tweet</a></span>
                         <span className="px-1"><a href="https://twitter.com/intent/tweet?screen_name=akatsuki_py&ref_src=twsrc%5Etfw" className="twitter-mention-button" data-show-count="false">Tweet to @akatsuki_py</a></span>
                     </div>
                 </div>

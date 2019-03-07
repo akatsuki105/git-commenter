@@ -9,4 +9,4 @@ In addition, the Commit Message created here can be easily copied and pasted.
 
 Please visit the following URL where this repository is hosted.
 
-[⚔️ Git Commenter ⚔️]()
+[⚔️ Git Commenter ⚔️](http://git-commenter.com/)
