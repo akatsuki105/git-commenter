@@ -61,7 +61,7 @@
     },
     "Clean" : {
         "frequency": "14",
-        "ja": "一掃",
+        "ja": "一掃・整理",
         "phrase": []
     },
     "Set" : {
@@ -97,6 +97,16 @@
     "Improve" : {
         "frequency": "21",
         "ja": "改善する",
+        "phrase": [["o1"]]
+    },
+    "Upgrade" : {
+        "frequency": "22",
+        "ja": "アップグレード",
         "phrase": [["o1", "to", "v1"]]
+    },
+    "Refactor" : {
+        "frequency": "23",
+        "ja": "リファクタリング",
+        "phrase": [["o1"]]
     }
 }
