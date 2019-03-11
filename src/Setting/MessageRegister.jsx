@@ -50,7 +50,7 @@ class MessageRegister extends Component {
                                 {
                                     fetchTemplate("message").map((element, id) => {
                                         return (
-                                            <option value={id} key={id}>{constructMessage(element)}</option>
+                                            <option value={id} key={id}>{constructMessage(element).message}</option>
                                         )
                                     })
                                 }

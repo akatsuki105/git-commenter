@@ -81,7 +81,7 @@ class Template extends Component {
                             {
                                 fetchTemplate("message").map((element, id) => {
                                     return (
-                                        <option value={`m#${id}`} key={id}>{constructMessage(element)}</option>
+                                        <option value={`m#${id}`} key={id}>{constructMessage(element).message}</option>
                                     )
                                 })
                             }
