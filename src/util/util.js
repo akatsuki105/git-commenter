@@ -18,7 +18,11 @@ export function constructMessage({ emoji = "", verb = "", adjective = "", object
         message += `${emoji} : `;
     }
     if (verb !== "") {
-        message += verb;
+        if (verb.length > 1) {
+            message += verb.charAt(0).toUpperCase() + verb.slice(1);
+        } else {
+            message += verb;
+        }
     }
     if (adjective !== "") {
         message += ` ${adjective}`;
