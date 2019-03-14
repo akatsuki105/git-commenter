@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import { Row, Col, FormGroup, Label, Input, FormText } from 'reactstrap';
-import objectData from '../data/noun.json';
-import { fetchTemplate } from "../util/util";
-
-// Redux
 import { connect } from "react-redux";
 import { addElement } from "../Redux/actions";
+import { Row, Col, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { fetchTemplate } from "../util/util";
+import Aws from "../util/aws";
 
 class CommitObject extends Component {
 
@@ -13,12 +11,21 @@ class CommitObject extends Component {
         super(props);
 
         this.state = {
-            input: "form"
+            input: "form",
+            objectTmpls: {}
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.renderInput = this.renderInput.bind(this);
 
+    }
+
+    async componentDidMount() {
+        const tmpls = await Aws.fetchTmpls("object", 20);
+
+        this.setState({
+            objectTmpls: tmpls
+        })
     }
 
     handleChange(e) {
@@ -33,6 +40,7 @@ class CommitObject extends Component {
     }
 
     renderInput() {
+        const objectData = this.state.objectTmpls;
         if (this.state.input === "select") {
             return (
                 <FormGroup>

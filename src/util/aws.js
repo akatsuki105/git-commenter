@@ -6,11 +6,14 @@ export default class Aws {
         const url = AWS_API_URL + `/tmpls?category=${category}&limit=${limit}`;
         const response = await fetch(url, { method: "GET", mode: "cors", headers: { "Content-Type": "application/json; charset=utf-8" } });
         const tmpls = await response.json();
-        console.log(tmpls);
         return tmpls;
     }
 
     static async addTmplCtr(category, word) {
+        if (word === "") {
+            return 0;
+        }
+
         const api_url = AWS_API_URL + "/tmpls";
         const payload = {
             "name": "addTmplCtr",

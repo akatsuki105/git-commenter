@@ -1,11 +1,10 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { overwrite } from "../Redux/actions";
 import { Button, FormGroup, Label, Input, Fade, FormFeedback, FormText } from 'reactstrap';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { fetchTemplate, constructMessage } from "../util/util";
-
-// Redux
-import { connect } from "react-redux";
-import { overwrite } from "../Redux/actions";
+import Aws from "../util/aws";
 
 class Result extends Component {
 
@@ -27,6 +26,12 @@ class Result extends Component {
     }
 
     copyAlert() {
+        const message = this.props.message;
+        Aws.addTmplCtr("emoji", message.emoji);
+        Aws.addTmplCtr("verb", message.verb);
+        Aws.addTmplCtr("adjective", message.adjective);
+        Aws.addTmplCtr("object", message.object);
+
         this.toggle();
 
         setTimeout(() => {

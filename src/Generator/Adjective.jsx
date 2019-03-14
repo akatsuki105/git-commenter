@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import { Row, Col, FormGroup, Label, Input, FormText } from 'reactstrap';
-
-import adjectiveData from '../data/adjective.json';
-import { fetchTemplate } from "../util/util";
-
-// Redux
 import { connect } from "react-redux";
 import { addElement } from "../Redux/actions";
+import { Row, Col, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { fetchTemplate } from "../util/util";
+import Aws from "../util/aws";
 
 class Adjective extends Component {
 
@@ -14,12 +11,21 @@ class Adjective extends Component {
         super(props);
 
         this.state = {
-            input: "form"
+            input: "form",
+            adjectiveTmpls: {}
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.renderInput = this.renderInput.bind(this);
 
+    }
+
+    async componentDidMount() {
+        const tmpls = await Aws.fetchTmpls("adjective", 20);
+
+        this.setState({
+            adjectiveTmpls: tmpls
+        })
     }
 
     handleChange(e) {
@@ -34,6 +40,7 @@ class Adjective extends Component {
     }
 
     renderInput() {
+        const adjectiveData = this.state.adjectiveTmpls;
         if (this.state.input === "select") {
             return (
                 <FormGroup>
