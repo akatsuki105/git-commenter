@@ -40,12 +40,12 @@ class MessageRegister extends Component {
     render() {
         return (
             <React.Fragment>
-                <Col xs={12}><h4>{"🖨"} Message Template</h4></Col>
+                <Col xs={12}><h5>{"🖨"} Message Template</h5></Col>
                 <Col xs={12} className="mt-1 mb-4">
                     <Form>
                         <FormGroup>
                             <Label for="target">Remove Message from template</Label>
-                            <Input type="select" name="target" onChange={this.handleChange} value={this.state.target} >
+                            <Input type="select" name="target" bsSize="sm" onChange={this.handleChange} value={this.state.target} >
                                 <option value=""></option>
                                 {
                                     fetchTemplate("message").map((element, id) => {
@@ -59,7 +59,7 @@ class MessageRegister extends Component {
                                 {(this.props.lang === "en") ? `Please select the Message you want to delete from the template.` : `テンプレートから削除したいメッセージを選択してください。`}
                             </FormText>
                         </FormGroup>
-                        <Button color="danger" onClick={this.remove}>Remove</Button>
+                        <Button color="danger" size="sm" onClick={this.remove}>Remove</Button>
                     </Form>
                 </Col>
             </React.Fragment>
