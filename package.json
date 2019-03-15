@@ -1,7 +1,8 @@
 {
   "name": "git-commenter",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "Git Comment Generator with GUI",
   "main": "src/electron-starter.js",
   "author": "Akihiro Otomo🍁",
   "dependencies": {
@@ -22,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "build package": "npx electron-packager . git-commenter --platform=win32 --arch=x64 --overwrite"
+    "build windows package": "npx electron-packager . git-commenter --platform=win32 --arch=x64 --overwrite"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,5 +37,9 @@
   "devDependencies": {
     "electron": "^4.1.0",
     "electron-packager": "^13.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Akatsuki-py/git-commenter"
   }
 }
