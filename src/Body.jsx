@@ -13,6 +13,8 @@ class Body extends Component {
 
                     {/* 設定ページ */}
                     <Route path="/setting" component={Setting} />
+
+                    <Route component={Generator} />
                 </Switch>
             </Container>
         );

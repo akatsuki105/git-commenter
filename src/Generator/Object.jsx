@@ -48,7 +48,7 @@ class CommitObject extends Component {
                             {
                                 Object.keys(objectData).map((object) => {
                                     return (
-                                        <option value={object} key={object}>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{(this.props.lang === "en") ? object : `${object} ${objectData[object].ja}`}</option>
+                                        <option value={object} key={object}>{(this.props.lang === "en") ? object : `${object} ${objectData[object].ja}`}</option>
                                     )
                                 })
                             }

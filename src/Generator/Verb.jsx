@@ -48,7 +48,7 @@ class Verb extends Component {
                                 {
                                     Object.keys(verbData).map((verb) => {
                                         return (
-                                            <option value={verb} key={verb}>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{(this.props.lang === "en") ? verb : `${verb} ${verbData[verb].ja}`}</option>
+                                            <option value={verb} key={verb}>{(this.props.lang === "en") ? verb : `${verb} ${verbData[verb].ja}`}</option>
                                         )
                                     })
                                 }
