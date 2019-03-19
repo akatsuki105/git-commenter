@@ -92,7 +92,7 @@ class Result extends Component {
         return (
             <React.Fragment>
 
-                <FormGroup className="py-1">
+                <FormGroup>
                     <Label for="gitComment">{"🎊 Git Comment"}</Label>
                     <Input type="textarea" name="gitComment" disabled value={message} style={{ resize: "horizontal", height: "100px"}} invalid={resultStatus}></Input>
                     <FormFeedback>{warning}</FormFeedback>

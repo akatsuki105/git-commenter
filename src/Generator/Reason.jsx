@@ -21,10 +21,10 @@ class Reason extends Component {
     render() {
         return (
             <Row form>
-                <Col xs={12}><Label for="reason">{"❓ Reason"}</Label></Col>
+                <Col xs={12}><Label for="reason">{"💪 Body"}</Label></Col>
                 <Col xs={11}>
                     <FormGroup>
-                        <Input type="text" name="reason" list="reason-tmpl" onChange={this.handleChange} value={this.props.reason} autoComplete="off" />
+                        <Input type="text" name="reason" list="reason-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "This is where you enter the details of your commit." : "コミット内容の詳細を書くところです。ここは日本語でも構いません。"} value={this.props.reason} autoComplete="off" />
                         <datalist id="reason-tmpl">
                             {
                                 fetchTemplate("reason").map((element) => {
@@ -34,9 +34,6 @@ class Reason extends Component {
                                 })
                             }
                         </datalist>
-                        {/* <FormText color="muted">
-                                {(this.props.lang === "en") ? "User can enter freely." : "ユーザーが自由に入力できます。"}
-                            </FormText> */}
                     </FormGroup>
                 </Col>
                 <Col xs={1}>

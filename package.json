@@ -1,6 +1,6 @@
 {
   "name": "git-commenter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Git Comment Generator with GUI",
   "main": "src/electron-starter.js",
@@ -23,7 +23,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "build windows package": "npx electron-packager . git-commenter --platform=win32 --arch=x64 --overwrite"
+    "build-windows-package": "npx electron-packager . git-commenter --platform=win32 --arch=x64 --icon=./icon.ico --overwrite",
+    "build-osx-package": "npx electron-packager . git-commenter --platform=darwin --arch=x64 --icon=./icon.ico --overwrite"
   },
   "eslintConfig": {
     "extends": "react-app"

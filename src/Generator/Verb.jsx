@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addElement } from "../Redux/actions";
-import { Row, Col, Button, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Row, Col, Button, FormGroup, Label, Input } from 'reactstrap';
 import { fetchTemplate } from "../util/util";
 import Aws from "../util/aws";
 
@@ -18,7 +18,7 @@ class Verb extends Component {
     }
 
     async componentDidMount() {
-        const tmpls = await Aws.fetchTmpls("verb", 50);
+        const tmpls = await Aws.fetchTmpls("verb", 30);
 
         this.setState({
             verbTmpls: tmpls
@@ -36,7 +36,7 @@ class Verb extends Component {
                 <Col xs={12}><Label for="verb">{"🚵🏼‍ Verb"}</Label></Col>
                 <Col xs={11} sm={11}>
                     <FormGroup>
-                        <Input type="text" name="verb" list="verb-tmpl" onChange={this.handleChange} value={this.props.verb} autoComplete="off" />
+                        <Input type="text" name="verb" list="verb-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "User can enter freely." : "コミット内容を入力するところです。 例 : 何かを追加した=> 「Add」"} value={this.props.verb} autoComplete="off" />
                             <datalist id="verb-tmpl">
                                 {
                                     fetchTemplate("verb").map((element) => {
@@ -53,9 +53,6 @@ class Verb extends Component {
                                     })
                                 }
                             </datalist>
-                        <FormText color="muted">
-                            {(this.props.lang === "en") ? "User can enter freely." : "コミット内容を入力するところです。 例 : 何かを追加した=> 「Add」"}
-                        </FormText>
                     </FormGroup>
                 </Col>
                 <Col xs={1}>

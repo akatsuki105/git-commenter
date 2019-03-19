@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form } from 'reactstrap';
-
+import { connect } from "react-redux";
 import Emoji from "./Emoji";
 import Verb from "./Verb";
 import Adjective from "./Adjective";
@@ -9,9 +9,8 @@ import Modifier from "./Modifier";
 import Result from "./Result";
 import Reason from "./Reason";
 import Template from "./Template";
-
-// Redux
-import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import setting from "../img/setting.png";
 
 class Generator extends Component {
 
@@ -30,13 +29,13 @@ class Generator extends Component {
 
                 <Reason />
 
-                <hr/>
-
                 <Result />
 
                 <hr/>
 
                 <Template/>
+
+                <Link to="/setting"><img id="setting-icon" src={setting} alt="setting" /></Link>
             </Form>
         );
     }

@@ -4,6 +4,9 @@ import { Row, Col } from "reactstrap";
 import Register from "./Register";
 import MessageRegister from "./MessageRegister";
 import Request from "./Request";
+import { Link } from "react-router-dom";
+import setting from "../img/setting.png";
+import Language from "./Language";
 
 class Setting extends Component {
 
@@ -18,6 +21,8 @@ class Setting extends Component {
                 <Register data="reason" emoji="❓" />
                 <MessageRegister />
                 <Request />
+                <Language />
+                <Link to="/"><img id="setting-icon" src={setting} alt="setting" /></Link>
             </Row>
         );
     }

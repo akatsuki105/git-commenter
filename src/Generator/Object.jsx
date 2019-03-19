@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addElement } from "../Redux/actions";
-import { Row, Col, Button, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Row, Col, Button, FormGroup, Label, Input } from 'reactstrap';
 import Aws from "../util/aws";
 import { fetchTemplate } from "../util/util";
 
@@ -18,7 +18,7 @@ class CommitObject extends Component {
     }
 
     async componentDidMount() {
-        const tmpls = await Aws.fetchTmpls("object", 50);
+        const tmpls = await Aws.fetchTmpls("object", 25);
 
         this.setState({
             objectTmpls: tmpls
@@ -36,7 +36,7 @@ class CommitObject extends Component {
                 <Col xs={12}><Label for="object">{"⚽️ Object"}</Label></Col>
                 <Col xs={11}>
                     <FormGroup>
-                        <Input type="text" name="object" list="object-tmpl" onChange={this.handleChange} value={this.props.object} autoComplete="off" />
+                        <Input type="text" name="object" list="object-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "Please enter the object of the commit." : "コミットの対象を入力するところです。 例: バグを修正 => fix bug"} value={this.props.object} autoComplete="off" />
                         <datalist id="object-tmpl">
                             {
                                 fetchTemplate("object").map((element) => {
@@ -53,9 +53,6 @@ class CommitObject extends Component {
                                 })
                             }
                         </datalist>
-                        <FormText color="muted">
-                            {(this.props.lang === "en") ? "Please enter the object of the commit." : "コミットの対象を入力するところです。 例: バグを修正 => fix bug"}
-                        </FormText>
                     </FormGroup>
                 </Col>
                 <Col xs={1}>

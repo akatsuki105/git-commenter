@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addElement } from "../Redux/actions";
-import { Row, Col, Button, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Row, Col, Button, FormGroup, Label, Input } from 'reactstrap';
 import { fetchTemplate } from "../util/util";
 import Aws from "../util/aws";
 
@@ -18,7 +18,7 @@ class Adjective extends Component {
     }
 
     async componentDidMount() {
-        const tmpls = await Aws.fetchTmpls("adjective", 50);
+        const tmpls = await Aws.fetchTmpls("adjective", 25);
 
         this.setState({
             adjectiveTmpls: tmpls
@@ -36,7 +36,7 @@ class Adjective extends Component {
                 <Col xs={12}><Label for="adjective">{"✨ Adjective"}</Label></Col>
                 <Col xs={11}>
                     <FormGroup>
-                        <Input type="text" name="adjective" list="adjective-tmpl" onChange={this.handleChange} value={this.props.adjective} autoComplete="off" />
+                        <Input type="text" name="adjective" list="adjective-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "This is where you enter words that qualify Object. You do not have to enter if you do not need it.  e.g. new, unused " : "コミットの対象(Object)を修飾する語句を入力するところです。必要がないならば無理に入力する必要はありません。 例:「new」,「unused」"} value={this.props.adjective} autoComplete="off" />
                         <datalist id="adjective-tmpl">
                             {
                                 fetchTemplate("adjective").map((element) => {
@@ -53,9 +53,6 @@ class Adjective extends Component {
                                 })
                             }
                         </datalist>
-                        <FormText color="muted">
-                            {(this.props.lang === "en") ? "This is where you enter words that qualify Object. You do not have to enter if you do not need it.  e.g. new, unused " : "コミットの対象(Object)を修飾する語句を入力するところです。必要がないならば無理に入力する必要はありません。 例:「new」,「unused」"}
-                        </FormText>
                     </FormGroup>
                 </Col>
                 <Col xs={1}>
