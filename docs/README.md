@@ -11,4 +11,4 @@ Please visit the following URL where this repository is hosted.
 
 ## Release
 
-#### 2019/3/15 [v1.0](https://github.com/Akatsuki-py/git-commenter/releases/tag/v1.0) released.
+#### 2019/3/20 [v1.1](https://github.com/Akatsuki-py/git-commenter/releases/tag/v1.1) released.
