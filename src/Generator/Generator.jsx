@@ -3,7 +3,6 @@ import { Form } from 'reactstrap';
 import { connect } from "react-redux";
 import Emoji from "./Emoji";
 import Verb from "./Verb";
-import Adjective from "./Adjective";
 import Object from "./Object";
 import Modifier from "./Modifier";
 import Result from "./Result";
@@ -20,8 +19,6 @@ class Generator extends Component {
                 <Emoji />
 
                 <Verb />
-
-                <Adjective />
 
                 <Object />
 

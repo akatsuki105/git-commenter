@@ -40,7 +40,7 @@ class MessageRegister extends Component {
     render() {
         return (
             <React.Fragment>
-                <Col xs={12}>{"🖨"} Message Template</Col>
+                <Col xs={12}>{"🖨"} {(this.props.lang === "en") ? `Remove Message Template` : `テンプレートメッセージの削除`}</Col>
                 <Col xs={12} className="my-1">
                     <Form>
                         <FormGroup row>
