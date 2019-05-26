@@ -6,7 +6,6 @@ import MessageRegister from "./MessageRegister";
 import { Link } from "react-router-dom";
 import setting from "../img/setting.png";
 import Language from "./Language";
-import AddTemplate from "./AddTemplate";
 
 class Setting extends Component {
 
