@@ -36,7 +36,7 @@ class Adjective extends Component {
                 <Col xs={12}><Label for="adjective">{"✨ Adjective"}</Label></Col>
                 <Col xs={11}>
                     <FormGroup>
-                        <Input type="text" name="adjective" list="adjective-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "This is where you enter words that qualify Object. You do not have to enter if you do not need it.  e.g. new, unused " : "コミットの対象(Object)を修飾する語句を入力するところです。必要がないならば無理に入力する必要はありません。 例:「new」,「unused」"} value={this.props.adjective} autoComplete="off" />
+                        <Input type="text" bsSize="sm" name="adjective" list="adjective-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "This is where you enter words that qualify Object. You do not have to enter if you do not need it.  e.g. new, unused " : "コミットの対象(Object)を修飾する語句を入力するところです。必要がないならば無理に入力する必要はありません。 例:「new」,「unused」"} value={this.props.adjective} autoComplete="off" />
                         <datalist id="adjective-tmpl">
                             {
                                 fetchTemplate("adjective").map((element) => {
@@ -56,7 +56,7 @@ class Adjective extends Component {
                     </FormGroup>
                 </Col>
                 <Col xs={1}>
-                    <Button outline color="primary" onClick={(() => { this.props.dispatch(addElement("adjective", "")) })} block>Reset</Button>
+                    <Button outline size="sm" color="primary" onClick={(() => { this.props.dispatch(addElement("adjective", "")) })} block>Reset</Button>
                 </Col>
             </Row>
         );

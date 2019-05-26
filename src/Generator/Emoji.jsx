@@ -33,7 +33,7 @@ class Emoji extends Component {
         return (
             <FormGroup>
                 <Label for="emoji">{"😉 Emoji"}</Label>
-                <Input type="select" name="emoji" onChange={this.handleChange} value={this.props.emoji}>
+                <Input type="select" bsSize="sm" name="emoji" onChange={this.handleChange} value={this.props.emoji}>
                     <option value=""></option>
                     {
                         Object.keys(emojiData).map((emoji) => {

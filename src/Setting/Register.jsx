@@ -49,23 +49,21 @@ class Register extends Component {
     render() {
         return (
             <React.Fragment>
-                <Col xs={12}><h5>{this.props.emoji} {this.props.data} Template</h5></Col>
+                <Col xs={12}>{this.props.emoji} {this.props.data} Template</Col>
                 <Col xs={12} className="my-1">
-                    <Form>
-                        <FormGroup>
-                            <Label for="addTarget">Add {this.props.data} in template</Label>
+
+                    <FormGroup row>
+                        <Col sm={5}>
                             <Input type="text" name="addTarget" bsSize="sm" onChange={this.handleChange} value={this.state.addTarget} />
                             <FormText>
-                                {(this.props.lang === "en") ? `Please enter the ${this.props.data} you want to register as a template.` : `テンプレートとして登録したい${this.props.data}を入力してください。登録した目的語は${this.props.data}のテンプレ一覧に追加されます。`}
+                                {(this.props.lang === "en") ? `Please enter the ${this.props.data} you want to register as a template.` : `テンプレートとして登録したい${this.props.data}を入力してください。`}
                             </FormText>
-                        </FormGroup>
-                        <Button color="primary" size="sm" onClick={this.add}>Add</Button>
-                    </Form>
-                </Col>
-                <Col xs={12} className="mb-3">
-                    <Form>
-                        <FormGroup>
-                            <Label for="removeTarget">Remove {this.props.data} from template</Label>
+                        </Col>
+                        <Col sm={1}>
+                            <Button color="primary" size="sm" onClick={this.add} block>Add</Button>
+                        </Col>
+
+                        <Col sm={5}>
                             <Input type="select" name="removeTarget" bsSize="sm" onChange={this.handleChange} value={this.state.removeTarget} >
                                 <option value=""></option>
                                 {
@@ -79,9 +77,11 @@ class Register extends Component {
                             <FormText>
                                 {(this.props.lang === "en") ? `Please select the ${this.props.data} you want to delete from the template.` : `テンプレートから削除したい${this.props.data}を選択してください。`}
                             </FormText>
-                        </FormGroup>
-                        <Button color="danger" size="sm" onClick={this.remove}>Remove</Button>
-                    </Form>
+                        </Col>
+                        <Col sm={1}>
+                            <Button color="danger" size="sm" onClick={this.remove} block>Remove</Button>
+                        </Col>
+                    </FormGroup>
                 </Col>
             </React.Fragment>
         );

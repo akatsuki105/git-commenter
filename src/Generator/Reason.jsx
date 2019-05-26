@@ -24,7 +24,7 @@ class Reason extends Component {
                 <Col xs={12}><Label for="reason">{"💪 Body"}</Label></Col>
                 <Col xs={11}>
                     <FormGroup>
-                        <Input type="text" name="reason" list="reason-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "This is where you enter the details of your commit." : "コミット内容の詳細を書くところです。ここは日本語でも構いません。"} value={this.props.reason} autoComplete="off" />
+                        <Input type="text" bsSize="sm" name="reason" list="reason-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "This is where you enter the details of your commit." : "コミット内容の詳細を書くところです。ここは日本語でも構いません。"} value={this.props.reason} autoComplete="off" />
                         <datalist id="reason-tmpl">
                             {
                                 fetchTemplate("reason").map((element) => {
@@ -37,7 +37,7 @@ class Reason extends Component {
                     </FormGroup>
                 </Col>
                 <Col xs={1}>
-                    <Button outline color="primary" onClick={(() => { this.props.dispatch(addElement("reason", "")) })} block>Reset</Button>
+                    <Button outline size="sm" color="primary" onClick={(() => { this.props.dispatch(addElement("reason", "")) })} block>Reset</Button>
                 </Col>
             </Row>
         );

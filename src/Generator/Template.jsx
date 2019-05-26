@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, FormGroup, Label, Input } from 'reactstrap';
+import { Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
 import templateData from '../data/template.json';
 import { fetchTemplate, constructMessage } from "../util/util";
 
@@ -72,11 +72,10 @@ class Template extends Component {
 
     render() {
         return (
-            <Row form>
-                <Col xs={12}><Label for="template">{"🖨 Template"}</Label></Col>
-                <Col xs={12}>
-                    <FormGroup>
-                        <Input type="select" name="template" onChange={this.handleChange} value={this.state.template}>
+            <Form inline>
+                <FormGroup>
+                    <Label for="template">{"🖨 Template"}</Label>
+                    <Input type="select" bsSize="sm" name="template" className="ml-4" onChange={this.handleChange} value={this.state.template}>
                             <option value="">message template</option>
                             {
                                 fetchTemplate("message").map((element, id) => {
@@ -92,10 +91,9 @@ class Template extends Component {
                                     )
                                 })
                             }
-                        </Input>
-                    </FormGroup>
-                </Col>
-            </Row>
+                    </Input>
+                </FormGroup>
+            </Form>
         );
     }
 }

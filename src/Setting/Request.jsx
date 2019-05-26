@@ -41,9 +41,8 @@ class Request extends Component {
     renderInput() {
         if (this.props.lang === "en") {
             return (
-                <Col md={10}>
+                <Col md={8}>
                     <FormGroup>
-                        <Label for="word">Word</Label>
                         <Input type="text" name="word" bsSize="sm" autoComplete="off" onChange={this.handleChange} value={this.state.word} placeholder="enter a word" />
                         <FormText>
                             Please enter the words you want to be included in the default template for this service.
@@ -54,21 +53,19 @@ class Request extends Component {
         } else {
             return (
                 <React.Fragment>
-                    <Col md={5}>
+                    <Col md={4}>
                         <FormGroup>
-                            <Label for="word">Word</Label>
                             <Input type="text" name="word" bsSize="sm" autoComplete="off" onChange={this.handleChange} value={this.state.word} placeholder="enter a word" />
                             <FormText>
                                 デフォルトテンプレートとして採用してもらいたい語句を入力してください
                             </FormText>
                         </FormGroup>
                     </Col>
-                    <Col md={5}>
+                    <Col md={4}>
                         <FormGroup>
-                            <Label for="ja">日本語訳</Label>
                             <Input type="text" name="ja" bsSize="sm" autoComplete="off" onChange={this.handleChange} value={this.state.ja} />
                             <FormText>
-                                日本語訳なるべく簡潔に入力してください 例. wordでaddを入力 => 追加
+                                語句の日本語訳をなるべく簡潔に入力してください
                             </FormText>
                         </FormGroup>
                     </Col>
@@ -80,15 +77,14 @@ class Request extends Component {
     render() {
         return (
             <React.Fragment>
-                <Col xs={12}><h5>{"🛎"} Request</h5></Col>
-                <Col xs={12} className="mt-1 mb-4">
+                <Col xs={12}>{"🛎"} Request</Col>
+                <Col xs={12} className="my-1">
                     <Form>
                         <Row form>
                             <Col md={2}>
                                 <FormGroup>
-                                    <Label for="category">Category</Label>
                                     <Input type="select" name="category" bsSize="sm" onChange={this.handleChange} value={this.state.category} >
-                                        <option value=""></option>
+                                        <option value="">Category</option>
                                         <option value="verb">Verb</option>
                                         <option value="adjective">Adjective</option>
                                         <option value="object">Object</option>
@@ -96,8 +92,10 @@ class Request extends Component {
                                 </FormGroup>
                             </Col>
                             {this.renderInput()}
+                            <Col md={2}>
+                                <Button size="sm" onClick={this.sendRequest} block>Send a request</Button>
+                            </Col>
                         </Row>
-                        <Button size="sm" onClick={this.sendRequest}>Send a request</Button>
                     </Form>
                 </Col>
             </React.Fragment>

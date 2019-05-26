@@ -36,7 +36,7 @@ class Verb extends Component {
                 <Col xs={12}><Label for="verb">{"🚵🏼‍ Verb"}</Label></Col>
                 <Col xs={11} sm={11}>
                     <FormGroup>
-                        <Input type="text" name="verb" list="verb-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "User can enter freely." : "コミット内容を入力するところです。 例 : 何かを追加した=> 「Add」"} value={this.props.verb} autoComplete="off" />
+                        <Input type="text" bsSize="sm" name="verb" list="verb-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "User can enter freely." : "コミット内容を入力するところです。 例 : 何かを追加した=> 「Add」"} value={this.props.verb} autoComplete="off" />
                             <datalist id="verb-tmpl">
                                 {
                                     fetchTemplate("verb").map((element) => {
@@ -56,7 +56,7 @@ class Verb extends Component {
                     </FormGroup>
                 </Col>
                 <Col xs={1}>
-                    <Button outline color="primary" onClick={(() => { this.props.dispatch(addElement("verb", "")) })} block>Reset</Button>
+                    <Button outline size="sm" color="primary" onClick={(() => { this.props.dispatch(addElement("verb", "")) })} block>Reset</Button>
                 </Col>
             </Row>
         );
