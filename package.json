@@ -24,7 +24,8 @@
     "eject": "react-scripts eject",
     "electron": "electron .",
     "build-windows-package": "npx electron-packager . git-commenter --platform=win32 --arch=x64 --icon=./icon.ico --overwrite",
-    "build-osx-package": "npx electron-packager . git-commenter --platform=darwin --arch=x64 --icon=./icon.ico --overwrite"
+    "build-osx-package": "npx electron-packager . git-commenter --platform=darwin --arch=x64 --icon=./icon.ico --overwrite",
+    "build-linux-package": "npx electron-packager . git-commenter --platform=linux --arch=x64 --icon=./icon.ico --overwrite"
   },
   "eslintConfig": {
     "extends": "react-app"
