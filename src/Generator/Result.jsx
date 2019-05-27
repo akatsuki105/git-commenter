@@ -100,15 +100,15 @@ class Result extends Component {
                 </FormGroup>
 
                 <CopyToClipboard text={message} onCopy={this.copyAlert}>
-                    <Button color="primary">Copy</Button>
+                    <Button size="sm" color="primary">Copy</Button>
                 </CopyToClipboard>
 
-                <Button className="mx-3" onClick={this.register}>Register</Button>
+                <Button className="mx-2" size="sm" onClick={this.register}>Register</Button>
 
-                <Button color="danger" onClick={this.reset}>Reset</Button>
+                <Button color="danger" size="sm" onClick={this.reset}>Reset</Button>
 
-                <Fade in={this.state.fadeIn} className="pt-2">
-                    Copied!
+                <Fade in={this.state.fadeIn} className="pt-1">
+                    <small>Copied!</small>
                 </Fade>
             </React.Fragment>
         );

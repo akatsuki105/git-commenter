@@ -19,15 +19,17 @@ class Language extends Component {
         const formLabel = (this.props.lang === "en") ? "Change Language" : "言語の変更"
         return (
             <React.Fragment>
-                <Col xs={12}><h5>{"🌎"} Language</h5></Col>
-                <Col xs={12} className="mt-1 mb-4">
+                <Col xs={12}>{"🌎"} Language</Col>
+                <Col xs={12} className="mt-1 mb-3">
                     <Form>
-                        <FormGroup>
-                            <Label for="lang">{formLabel}</Label>
-                            <Input type="select" name="lang" bsSize="sm" onChange={this.switchLang} value={this.props.lang} >
-                                <option value="en">En</option>
-                                <option value="ja">Ja</option>
-                            </Input>
+                        <FormGroup row>
+                            <Label for="lang" sm={2}>{formLabel}</Label>
+                            <Col sm={10}>
+                                <Input type="select" name="lang" bsSize="sm" onChange={this.switchLang} value={this.props.lang} >
+                                    <option value="en">En</option>
+                                    <option value="ja">Ja</option>
+                                </Input>
+                            </Col>
                         </FormGroup>
                     </Form>
                 </Col>

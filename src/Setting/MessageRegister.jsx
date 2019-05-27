@@ -1,6 +1,6 @@
 // Messageのみ、要素ごとに保存する必要があるため別コンポーネント
 import React, { Component } from "react";
-import { Button, Col, Form, FormGroup, Input, Label, FormText } from "reactstrap";
+import { Button, Col, Form, FormGroup, Input, FormText } from "reactstrap";
 import { connect } from "react-redux";
 import { fetchTemplate, constructMessage } from "../util/util";
 
@@ -40,26 +40,31 @@ class MessageRegister extends Component {
     render() {
         return (
             <React.Fragment>
-                <Col xs={12}><h5>{"🖨"} Message Template</h5></Col>
-                <Col xs={12} className="mt-1 mb-4">
+                <Col xs={12}>{"🖨"} {(this.props.lang === "en") ? `Remove Message Template` : `テンプレートメッセージの削除`}</Col>
+                <Col xs={12} className="my-1">
                     <Form>
-                        <FormGroup>
-                            <Label for="target">Remove Message from template</Label>
-                            <Input type="select" name="target" bsSize="sm" onChange={this.handleChange} value={this.state.target} >
-                                <option value=""></option>
-                                {
-                                    fetchTemplate("message").map((element, id) => {
-                                        return (
-                                            <option value={id} key={id}>{constructMessage(element).message}</option>
-                                        )
-                                    })
-                                }
-                            </Input>
-                            <FormText>
-                                {(this.props.lang === "en") ? `Please select the Message you want to delete from the template.` : `テンプレートから削除したいメッセージを選択してください。`}
-                            </FormText>
+                        <FormGroup row>
+                            <Col sm={10}>
+                                <FormGroup>
+                                    <Input type="select" name="target" bsSize="sm" onChange={this.handleChange} value={this.state.target} >
+                                        <option value=""></option>
+                                        {
+                                            fetchTemplate("message").map((element, id) => {
+                                                return (
+                                                    <option value={id} key={id}>{constructMessage(element).message}</option>
+                                                )
+                                            })
+                                        }
+                                    </Input>
+                                    <FormText>
+                                        {(this.props.lang === "en") ? `Please select the Message you want to delete from the template.` : `テンプレートから削除したいメッセージを選択してください。`}
+                                    </FormText>
+                                </FormGroup>
+                            </Col>
+                            <Col sm={2}>
+                                <Button color="danger" size="sm" onClick={this.remove} block>Remove</Button>
+                            </Col>
                         </FormGroup>
-                        <Button color="danger" size="sm" onClick={this.remove}>Remove</Button>
                     </Form>
                 </Col>
             </React.Fragment>

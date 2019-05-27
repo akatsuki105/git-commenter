@@ -36,7 +36,7 @@ class CommitObject extends Component {
                 <Col xs={12}><Label for="object">{"⚽️ Object"}</Label></Col>
                 <Col xs={11}>
                     <FormGroup>
-                        <Input type="text" name="object" list="object-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "Please enter the object of the commit." : "コミットの対象を入力するところです。 例: バグを修正 => fix bug"} value={this.props.object} autoComplete="off" />
+                        <Input type="text" bsSize="sm" name="object" list="object-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "Please enter the object of the commit." : "コミットの対象を入力するところです。 例: バグを修正 => fix bug"} value={this.props.object} autoComplete="off" />
                         <datalist id="object-tmpl">
                             {
                                 fetchTemplate("object").map((element) => {
@@ -56,7 +56,7 @@ class CommitObject extends Component {
                     </FormGroup>
                 </Col>
                 <Col xs={1}>
-                    <Button outline color="primary" onClick={(() => { this.props.dispatch(addElement("object", "")) })} block>Reset</Button>
+                    <Button outline size="sm" color="primary" onClick={(() => { this.props.dispatch(addElement("object", "")) })} block>Reset</Button>
                 </Col>
             </Row>
         );

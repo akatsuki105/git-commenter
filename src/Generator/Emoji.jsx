@@ -2,26 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addElement } from "../Redux/actions";
 import { FormGroup, Label, Input, FormText } from 'reactstrap';
-import Aws from "../util/aws";
+import emojiData from '../data/emoji.json';
 
 class Emoji extends Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            emojiTmpls: {}
-        };
-
         this.handleChange = this.handleChange.bind(this);
-    }
-
-    async componentDidMount() {
-        const tmpls = await Aws.fetchTmpls("emoji", 50);
-
-        this.setState({
-            emojiTmpls: tmpls
-        })
     }
 
     handleChange(e) {
@@ -29,11 +16,10 @@ class Emoji extends Component {
     }
 
     render() {
-        const emojiData = this.state.emojiTmpls;
         return (
             <FormGroup>
                 <Label for="emoji">{"😉 Emoji"}</Label>
-                <Input type="select" name="emoji" onChange={this.handleChange} value={this.props.emoji}>
+                <Input type="select" bsSize="sm" name="emoji" onChange={this.handleChange} value={this.props.emoji}>
                     <option value=""></option>
                     {
                         Object.keys(emojiData).map((emoji) => {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Col, Form, FormGroup, Input, Label, FormText } from "reactstrap";
+import { Button, Col, FormGroup, Input, FormText } from "reactstrap";
 import { connect } from "react-redux";
 import { fetchTemplate } from "../util/util";
 
@@ -9,7 +9,9 @@ class Register extends Component {
         super(props);
 
         this.state = {
+            addFormat: "verb",
             addTarget: "",
+            removeFormat: "verb",
             removeTarget: ""
         }
 
@@ -26,9 +28,9 @@ class Register extends Component {
 
     add() {
         if (this.state.addTarget !== "") {
-            let template = fetchTemplate(this.props.data);
+            let template = fetchTemplate(this.state.addFormat);
             template.push(this.state.addTarget);
-            localStorage.setItem(this.props.data, JSON.stringify(template));
+            localStorage.setItem(this.state.addFormat, JSON.stringify(template));
 
             this.setState({
                 addTarget: ""
@@ -37,9 +39,9 @@ class Register extends Component {
     }
 
     remove() {
-        const template = fetchTemplate(this.props.data);
+        const template = fetchTemplate(this.state.removeFormat);
         const newTemplate = template.filter(n => n !== this.state.removeTarget);
-        localStorage.setItem(this.props.data, JSON.stringify(newTemplate));
+        localStorage.setItem(this.state.removeFormat, JSON.stringify(newTemplate));
 
         this.setState({
             removeTarget: ""
@@ -49,27 +51,43 @@ class Register extends Component {
     render() {
         return (
             <React.Fragment>
-                <Col xs={12}><h5>{this.props.emoji} {this.props.data} Template</h5></Col>
+                <Col xs={12}>{"🖨"} {(this.props.lang === "en") ? `Add or Remove Template` : `テンプレートの追加・削除`}</Col>
                 <Col xs={12} className="my-1">
-                    <Form>
-                        <FormGroup>
-                            <Label for="addTarget">Add {this.props.data} in template</Label>
+
+                    <FormGroup row>
+                        <Col sm={2}>{(this.props.lang === "en") ? `Add Template` : `テンプレートの追加`}</Col>
+                        <Col sm={2}>
+                            <Input type="select" name="addFormat" bsSize="sm" onChange={this.handleChange} value={this.state.addFormat}>
+                                <option value="verb">verb</option>
+                                <option value="object">object</option>
+                                <option value="modifier">modifier</option>
+                                <option value="reason">reason</option>
+                            </Input>
+                        </Col>
+                        <Col sm={7}>
                             <Input type="text" name="addTarget" bsSize="sm" onChange={this.handleChange} value={this.state.addTarget} />
                             <FormText>
-                                {(this.props.lang === "en") ? `Please enter the ${this.props.data} you want to register as a template.` : `テンプレートとして登録したい${this.props.data}を入力してください。登録した目的語は${this.props.data}のテンプレ一覧に追加されます。`}
+                                {(this.props.lang === "en") ? `Please enter the template you want to register.` : `登録したいテンプレートを入力してください。`}
                             </FormText>
-                        </FormGroup>
-                        <Button color="primary" size="sm" onClick={this.add}>Add</Button>
-                    </Form>
-                </Col>
-                <Col xs={12} className="mb-3">
-                    <Form>
-                        <FormGroup>
-                            <Label for="removeTarget">Remove {this.props.data} from template</Label>
+                        </Col>
+                        <Col sm={1}>
+                            <Button color="primary" size="sm" onClick={this.add} block>Add</Button>
+                        </Col>
+                        
+                        <Col sm={2}>{(this.props.lang === "en") ? `Remove Template` : `テンプレートの削除`}</Col>
+                        <Col sm={2}>
+                            <Input type="select" name="removeFormat" bsSize="sm" onChange={this.handleChange} value={this.state.removeFormat}>
+                                <option value="verb">verb</option>
+                                <option value="object">object</option>
+                                <option value="modifier">modifier</option>
+                                <option value="reason">reason</option>
+                            </Input>
+                        </Col>
+                        <Col sm={7}>
                             <Input type="select" name="removeTarget" bsSize="sm" onChange={this.handleChange} value={this.state.removeTarget} >
                                 <option value=""></option>
                                 {
-                                    fetchTemplate(this.props.data).map((element) => {
+                                    fetchTemplate(this.state.removeFormat).map((element) => {
                                         return (
                                             <option value={element} key={element}>{element}</option>
                                         )
@@ -77,11 +95,13 @@ class Register extends Component {
                                 }
                             </Input>
                             <FormText>
-                                {(this.props.lang === "en") ? `Please select the ${this.props.data} you want to delete from the template.` : `テンプレートから削除したい${this.props.data}を選択してください。`}
+                                {(this.props.lang === "en") ? "Please select the template you want to delete." : "削除したいテンプレートを選択してください。"}
                             </FormText>
-                        </FormGroup>
-                        <Button color="danger" size="sm" onClick={this.remove}>Remove</Button>
-                    </Form>
+                        </Col>
+                        <Col sm={1}>
+                            <Button color="danger" size="sm" onClick={this.remove} block>Remove</Button>
+                        </Col>
+                    </FormGroup>
                 </Col>
             </React.Fragment>
         );

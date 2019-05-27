@@ -7,7 +7,7 @@ import { Route, Switch } from "react-router-dom";
 class Body extends Component {
     render() {
         return (
-            <Container className="my-3">
+            <Container className="py-2">
                 <Switch>
                     <Route exact path="/" component={Generator} />
 
