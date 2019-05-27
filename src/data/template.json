@@ -10,7 +10,7 @@
         "ja" : "バグ修正"
     },
     "1": {
-        "en": "🎉 : initial commit",
+        "en": "🎉 : Initial commit",
         "emoji": "🎉",
         "verb": "",
         "adjective": "initial",
@@ -80,14 +80,14 @@
         "ja": "デザインを修正"
     },
     "8": {
-        "en": "⚡️ : Improve function",
+        "en": "⚡️ : Improve performance",
         "emoji": "⚡️",
         "verb": "Improve",
         "adjective": "",
-        "object": "function",
+        "object": "performance",
         "modifier" : "",
         "reason": "",
-        "ja": "機能の改善"
+        "ja": "パフォーマンスの改善"
     },
     "9": {
         "en": "📝 : Update README.md",
@@ -148,5 +148,45 @@
         "modifier" : "",
         "reason": "",
         "ja": "タイポを修正"
+    },
+    "15": {
+        "en": "📦 : Update package version",
+        "emoji": "📦",
+        "verb": "Update",
+        "adjective": "",
+        "object": "package version",
+        "modifier": "",
+        "reason": "",
+        "ja": "パッケージの更新"
+    },
+    "16": {
+        "en": "🎨 : Add convenience API",
+        "emoji": "🎨",
+        "verb": "Add",
+        "adjective": "",
+        "object": "convenience API",
+        "modifier": "",
+        "reason": "",
+        "ja": "便利なAPIを追加"
+    },
+    "17": {
+        "en": "💄 : Improve UI/UX",
+        "emoji": "💄",
+        "verb": "Improve",
+        "adjective": "",
+        "object": "UI/UX",
+        "modifier": "",
+        "reason": "",
+        "ja": "UI/UXの改善"
+    },
+    "18": {
+        "en": "📝 : Add README.md",
+        "emoji": "📝",
+        "verb": "Add",
+        "adjective": "",
+        "object": "README.md",
+        "modifier": "",
+        "reason": "",
+        "ja": "README.mdを追加"
     }
 }
