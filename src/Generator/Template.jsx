@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
 import templateData from '../data/template.json';
 import { fetchTemplate, constructMessage } from "../util/util";
 

@@ -1,6 +1,6 @@
 // Messageのみ、要素ごとに保存する必要があるため別コンポーネント
 import React, { Component } from "react";
-import { Button, Col, Form, FormGroup, Input, Label, FormText } from "reactstrap";
+import { Button, Col, Form, FormGroup, Input, FormText } from "reactstrap";
 import { connect } from "react-redux";
 import { fetchTemplate, constructMessage } from "../util/util";
 

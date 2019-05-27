@@ -11,8 +11,8 @@ class Setting extends Component {
 
     render() {
         return (
-            <Row>
-                <Col xs={12} className="mb-4"><h4>⚒ Setting 🛠</h4></Col>
+            <Row id="setting">
+                <Col xs={12} className="mb-1"><h4>⚒ Setting 🛠</h4></Col>
                 <Register />
                 <MessageRegister />
                 <Language />

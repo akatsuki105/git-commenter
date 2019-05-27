@@ -1,3 +1,12 @@
+#root {
+    background-color: #303030;
+    color: aliceblue;
+}
+
+#setting {
+    min-height: 100vh;
+}
+
 #setting-icon {
     position: fixed;
     bottom: 10px;
