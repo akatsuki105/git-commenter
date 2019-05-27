@@ -1,6 +1,7 @@
 #root {
     background-color: #303030;
     color: aliceblue;
+    min-height: 100vh;
 }
 
 #setting {

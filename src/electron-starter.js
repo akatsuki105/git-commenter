@@ -11,7 +11,7 @@ let mainWindow;
 
 function createWindow() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({ width: 1600, height: 1200, icon: path.join(__dirname, '/../build/card-image-clear.png') });
+    mainWindow = new BrowserWindow({ width: 1200, height: 900, icon: path.join(__dirname, '/../build/card-image-clear.png') });
 
     const startUrl = process.env.ELECTRON_START_URL || url.format({
         pathname: path.join(__dirname, '/../build/index.html'),
