@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { overwrite } from "../Redux/actions";
-import { Button, FormGroup, Label, Input, Fade, FormFeedback, FormText } from 'reactstrap';
+import { Button, Col, FormGroup, Label, Input, Fade, FormFeedback, FormText, Row } from 'reactstrap';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { fetchTemplate, constructMessage } from "../util/util";
 import Aws from "../util/aws";
@@ -90,27 +90,30 @@ class Result extends Component {
         }
 
         return (
-            <React.Fragment>
+            <Row>
+                <Col xs="12">
+                    <FormGroup>
+                        <Label for="gitComment">{"🎊 Git Comment"}</Label>
+                        <Input type="textarea" name="gitComment" disabled value={message} style={{ resize: "horizontal", height: "100px" }} invalid={resultStatus}></Input>
+                        <FormFeedback>{warning}</FormFeedback>
+                        <FormText>{(this.props.lang === "en") ? `The number of characters: Subject ${subjectCount}, Reason ${reasonCount}` : `現在の文字数: 要約${subjectCount}文字、理由${reasonCount}文字`}</FormText>
+                    </FormGroup>
+                </Col>
 
-                <FormGroup>
-                    <Label for="gitComment">{"🎊 Git Comment"}</Label>
-                    <Input type="textarea" name="gitComment" disabled value={message} style={{ resize: "horizontal", height: "100px"}} invalid={resultStatus}></Input>
-                    <FormFeedback>{warning}</FormFeedback>
-                    <FormText>{(this.props.lang === "en") ? `The number of characters: Subject ${subjectCount}, Reason ${reasonCount}` : `現在の文字数: 要約${subjectCount}文字、理由${reasonCount}文字`}</FormText>
-                </FormGroup>
+                <Col>
+                    <CopyToClipboard text={message} onCopy={this.copyAlert}>
+                        <Button size="sm" color="primary">Copy</Button>
+                    </CopyToClipboard>
 
-                <CopyToClipboard text={message} onCopy={this.copyAlert}>
-                    <Button size="sm" color="primary">Copy</Button>
-                </CopyToClipboard>
+                    <Button className="mx-2" size="sm" onClick={this.register}>Register</Button>
 
-                <Button className="mx-2" size="sm" onClick={this.register}>Register</Button>
+                    <Button color="danger" size="sm" onClick={this.reset}>Reset</Button>
 
-                <Button color="danger" size="sm" onClick={this.reset}>Reset</Button>
-
-                <Fade in={this.state.fadeIn} className="pt-1">
-                    <small>Copied!</small>
-                </Fade>
-            </React.Fragment>
+                    <Fade in={this.state.fadeIn} className="pt-1">
+                        <small>Copied!</small>
+                    </Fade>
+                </Col>
+            </Row>
         );
     }
 }

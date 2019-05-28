@@ -28,8 +28,6 @@ class Generator extends Component {
 
                 <Result />
 
-                <hr/>
-
                 <Template/>
 
                 <Link to="/setting"><img id="setting-icon" src={setting} alt="setting" /></Link>
