@@ -12,7 +12,7 @@ class Setting extends Component {
     render() {
         return (
             <Row id="setting">
-                <Col xs={12} className="mb-1"><h4>⚒ Setting 🛠</h4></Col>
+                <Col xs={12} className="mb-1"><Link to="/"><h4 style={{"color": "white"}}>⚒ Setting 🛠</h4></Link></Col>
                 <Register />
                 <MessageRegister />
                 <Language />

@@ -188,5 +188,35 @@
         "modifier": "",
         "reason": "",
         "ja": "README.mdを追加"
+    },
+    "19": {
+        "en": "🔒 : Don't use unsafe function",
+        "emoji": "🔒",
+        "verb": "Don't use",
+        "adjective": "",
+        "object": "unsafe function",
+        "modifier": "",
+        "reason": "",
+        "ja": "危険性のある関数の使用を中止"
+    },
+    "20": {
+        "en": "♻️ : Refactor code",
+        "emoji": "♻️",
+        "verb": "Refactor",
+        "adjective": "",
+        "object": "code",
+        "modifier": "",
+        "reason": "",
+        "ja": "コードのリファクタリング"
+    },
+    "21": {
+        "en": "🎨 : Improve readability of some code",
+        "emoji": "🎨",
+        "verb": "Improve",
+        "adjective": "",
+        "object": "readability of some code",
+        "modifier": "",
+        "reason": "",
+        "ja": "コードの可読性を改善"
     }
 }

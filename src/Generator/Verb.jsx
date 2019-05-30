@@ -11,10 +11,12 @@ class Verb extends Component {
         super(props);
 
         this.state = {
+            input: "select",
             verbTmpls: {}
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.renderInput = this.renderInput.bind(this);
     }
 
     async componentDidMount() {
@@ -26,37 +28,79 @@ class Verb extends Component {
     }
 
     handleChange(e) {
-        this.props.dispatch(addElement("verb", e.target.value));
+        if (e.target.name === "input") {
+            this.setState({
+                input: e.target.value
+            });
+            this.props.dispatch(addElement("verb", ""));
+        } else if (e.target.name === "verb") {
+            this.props.dispatch(addElement("verb", e.target.value));
+        }
+    }
+
+    renderInput() {
+        const verbData = this.state.verbTmpls;
+        if (this.state.input === "select") {
+            return (
+                <FormGroup>
+                    <Input type="select" bsSize="sm" name="verb" onChange={this.handleChange} value={this.props.verb} >
+                        <option value=""></option>
+                        {
+                            fetchTemplate("verb").map((element) => {
+                                return (
+                                    <option value={element} key={element}>{element}</option>
+                                )
+                            })
+                        }
+                        {
+                            Object.keys(verbData).map((verb) => {
+                                return (
+                                    <option value={verb} key={verb}>{(this.props.lang === "en") ? verb : `${verb} ${verbData[verb].ja}`}</option>
+                                )
+                            })
+                        }
+                    </Input>
+                </FormGroup>
+            )
+        } else if (this.state.input === "form") {
+            return (
+                <FormGroup>
+                    <Input type="text" bsSize="sm" name="verb" list="verb-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "User can enter freely." : "コミット内容を入力するところです。 例 : 何かを追加した=> 「Add」"} value={this.props.verb} autoComplete="off" />
+                    <datalist id="verb-tmpl">
+                        {
+                            fetchTemplate("verb").map((element) => {
+                                return (
+                                    <option value={element} key={element} >{element}</option>
+                                )
+                            })
+                        }
+                        {
+                            Object.keys(verbData).map((verb) => {
+                                return (
+                                    <option value={verb} key={verb}>{(this.props.lang === "en") ? verb : `${verb} ${verbData[verb].ja}`}</option>
+                                )
+                            })
+                        }
+                    </datalist>
+                </FormGroup>
+            )
+        }
     }
 
     render() {
-        const verbData = this.state.verbTmpls;
         return (
             <Row form>
-                <Col xs={12}><Label for="verb">{"🚵🏼‍ Verb"}</Label></Col>
-                <Col xs={11} sm={11}>
+                <Col md={12}><Label>{"🚵🏼‍ Verb"}</Label></Col>
+                <Col md={2}>
                     <FormGroup>
-                        <Input type="text" bsSize="sm" name="verb" list="verb-tmpl" onChange={this.handleChange} placeholder={(this.props.lang === "en") ? "User can enter freely." : "コミット内容を入力するところです。 例 : 何かを追加した=> 「Add」"} value={this.props.verb} autoComplete="off" />
-                            <datalist id="verb-tmpl">
-                                {
-                                    fetchTemplate("verb").map((element) => {
-                                        return (
-                                            <option value={element} key={element} >{element}</option>
-                                        )
-                                    })
-                                }
-                                {
-                                    Object.keys(verbData).map((verb) => {
-                                        return (
-                                            <option value={verb} key={verb}>{(this.props.lang === "en") ? verb : `${verb} ${verbData[verb].ja}`}</option>
-                                        )
-                                    })
-                                }
-                            </datalist>
+                        <Input type="select" bsSize="sm" name="input" onChange={this.handleChange} value={this.state.input} >
+                            <option value="select">{(this.props.lang === "en") ? "template" : "テンプレ"}</option>
+                            <option value="form">{(this.props.lang === "en") ? "form" : "フォーム"}</option>
+                        </Input>
                     </FormGroup>
                 </Col>
-                <Col xs={1}>
-                    <Button outline size="sm" color="primary" onClick={(() => { this.props.dispatch(addElement("verb", "")) })} block>Reset</Button>
+                <Col md={10}>
+                    {this.renderInput()}
                 </Col>
             </Row>
         );

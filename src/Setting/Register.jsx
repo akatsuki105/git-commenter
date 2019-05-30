@@ -64,13 +64,13 @@ class Register extends Component {
                                 <option value="reason">reason</option>
                             </Input>
                         </Col>
-                        <Col sm={7}>
+                        <Col sm={6}>
                             <Input type="text" name="addTarget" bsSize="sm" onChange={this.handleChange} value={this.state.addTarget} />
                             <FormText>
                                 {(this.props.lang === "en") ? `Please enter the template you want to register.` : `登録したいテンプレートを入力してください。`}
                             </FormText>
                         </Col>
-                        <Col sm={1}>
+                        <Col sm={2}>
                             <Button color="primary" size="sm" onClick={this.add} block>Add</Button>
                         </Col>
                         
@@ -83,7 +83,7 @@ class Register extends Component {
                                 <option value="reason">reason</option>
                             </Input>
                         </Col>
-                        <Col sm={7}>
+                        <Col sm={6}>
                             <Input type="select" name="removeTarget" bsSize="sm" onChange={this.handleChange} value={this.state.removeTarget} >
                                 <option value=""></option>
                                 {
@@ -98,7 +98,7 @@ class Register extends Component {
                                 {(this.props.lang === "en") ? "Please select the template you want to delete." : "削除したいテンプレートを選択してください。"}
                             </FormText>
                         </Col>
-                        <Col sm={1}>
+                        <Col sm={2}>
                             <Button color="danger" size="sm" onClick={this.remove} block>Remove</Button>
                         </Col>
                     </FormGroup>

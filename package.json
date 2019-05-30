@@ -1,10 +1,10 @@
 {
-  "name": "git-commenter",
-  "version": "1.2.1",
+  "name": "GitCommenter",
+  "version": "1.2.2",
   "private": true,
   "description": "Git Comment Generator with GUI",
   "main": "src/electron-starter.js",
-  "author": "Akihiro Otomo🍁",
+  "author": "Akihiro Otomo",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "react": "^16.8.3",
