@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addElement } from "../Redux/actions";
-import { Row, Col, Button, FormGroup, Label, Input } from 'reactstrap';
+import { addElement, addPhrase } from "../Redux/actions";
+import { Row, Col, FormGroup, Label, Input } from 'reactstrap';
 import { fetchTemplate } from "../util/util";
 import Aws from "../util/aws";
 
@@ -17,6 +17,7 @@ class Verb extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.renderInput = this.renderInput.bind(this);
+        this.setPhraseToRedux = this.setPhraseToRedux.bind(this);
     }
 
     async componentDidMount() {
@@ -35,7 +36,15 @@ class Verb extends Component {
             this.props.dispatch(addElement("verb", ""));
         } else if (e.target.name === "verb") {
             this.props.dispatch(addElement("verb", e.target.value));
+            if (this.state.input === "select") {
+                this.setPhraseToRedux(e.target.value);
+            }
         }
+    }
+
+    async setPhraseToRedux(word) {
+        const phraseList = (await Aws.fetchWord("verb", word)).phrase || {} ;
+        this.props.dispatch(addPhrase(phraseList));
     }
 
     renderInput() {

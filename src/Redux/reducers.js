@@ -29,7 +29,7 @@ export function message(state = {
 
 // 選んだ動詞に対応するphrase
 export function phrases(state = {
-    phrases: []
+    phrases: {}
 }, action) {
     switch (action.type) {
         case "WRITE_PHRASES":
