@@ -9,6 +9,13 @@ export default class Aws {
         return tmpls;
     }
 
+    static async fetchWord(category, word) {
+        const url = AWS_API_URL + `/word?category=${category}&word=${word}`;
+        const response = await fetch(url, { method: "GET", mode: "cors", headers: { "Content-Type": "application/json; charset=utf-8" } });
+        const word_info = await response.json();
+        return word_info;
+    }
+
     static async addTmplCtr(category, word) {
         if (word === "") {
             return 0;

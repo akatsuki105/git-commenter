@@ -27,6 +27,20 @@ export function message(state = {
     }
 }
 
+// 選んだ動詞に対応するphrase
+export function phrases(state = {
+    phrases: []
+}, action) {
+    switch (action.type) {
+        case "WRITE_PHRASES":
+            return Object.assign({}, state, {
+                phrases: action.phrases
+            });
+        default:
+            return state;
+    }
+}
+
 // 言語設定
 export function lang(state={
     lang: (localStorage.getItem("lang") ? localStorage.getItem("lang") : "en")
@@ -43,5 +57,6 @@ export function lang(state={
 
 export default combineReducers({
     message,
+    phrases,
     lang
 });

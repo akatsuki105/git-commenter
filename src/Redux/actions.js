@@ -13,6 +13,13 @@ export function overwrite({ emoji, verb, adjective, object, modifier, reason}) {
     });
 }
 
+export function addPhrase(phrases) {
+    return ({
+        type: "WRITE_PHRASES",
+        phrases
+    });
+}
+
 export function switchLang(lang) {
     localStorage.setItem("lang", lang);
     return ({
