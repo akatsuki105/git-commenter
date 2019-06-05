@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Form, FormGroup, Input, Label, Row } from "reactstrap";
+import { Col, Form, FormGroup, Input, Label } from "reactstrap";
 import { connect } from "react-redux";
 import { switchLang } from "../Redux/actions";
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Col, FormGroup, Input, FormText, Row } from "reactstrap";
+import { Button, Col, FormGroup, Input, FormText } from "reactstrap";
 import { connect } from "react-redux";
 import { fetchTemplate } from "../util/util";
 

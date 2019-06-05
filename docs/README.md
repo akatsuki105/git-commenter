@@ -9,6 +9,8 @@ In addition, the Commit Message created here can be easily copied and pasted.
 
 Please visit the following URL where this repository is hosted.
 
+![sample](https://i.imgur.com/BRGuWAM.gif, "サンプル")
+
 ## Release
 
-#### 2019/5/27 [v1.2](https://github.com/Akatsuki-py/git-commenter/releases/tag/v1.2.2) released.
+#### 2019/6/5 [v1.3](https://github.com/Akatsuki-py/git-commenter/releases/tag/v1.3) released.
