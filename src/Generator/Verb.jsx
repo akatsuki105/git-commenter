@@ -44,6 +44,7 @@ class Verb extends Component {
 
     async setPhraseToRedux(word) {
         const phraseList = (await Aws.fetchWord("verb", word)).phrase || {} ;
+        console.log("phraseList: ", phraseList);
         this.props.dispatch(addPhrase(phraseList));
     }
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addElement } from "../Redux/actions";
-import { Row, Col, FormGroup, Label, Input } from 'reactstrap';
+import { Row, Col, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Aws from "../util/aws";
 import { fetchTemplate } from "../util/util";
 
@@ -35,11 +35,19 @@ class CommitObject extends Component {
             this.props.dispatch(addElement("object", ""));
         } else if (e.target.name === "object") {
             this.props.dispatch(addElement("object", e.target.value));
+        } else if (e.target.name === "hint") {
+            const phrase = JSON.parse(e.target.value);
+            this.props.dispatch(addElement("object", phrase.object));
+            this.props.dispatch(addElement("modifier", phrase.modifier));
+            this.setState({
+                input: "form",
+            });
         }
     }
 
     renderInput() {
         const objectData = this.state.objectTmpls;
+        const phraseList = this.props.phrases;
         if (this.state.input === "select") {
             return (
                 <FormGroup>
@@ -84,6 +92,22 @@ class CommitObject extends Component {
                     </datalist>
                 </FormGroup>
             )
+        } else if (this.state.input === "hint") {
+            return (
+                <FormGroup>
+                    <Input type="select" bsSize="sm" name="hint" onChange={this.handleChange} >
+                        <option value=""></option>
+                        {
+                            Object.keys(phraseList).map((phrase) => {
+                                return (
+                                    <option value={JSON.stringify(phraseList[phrase])}>{phrase}   {phraseList[phrase].ja}</option>
+                                )
+                            })
+                        }
+                    </Input>
+                    <FormText>ヒントは動詞とともに頻出するフレーズをサジェストする機能です。</FormText>
+                </FormGroup>
+            )
         }
     }
 
@@ -97,6 +121,7 @@ class CommitObject extends Component {
                         <Input type="select" bsSize="sm" name="input" onChange={this.handleChange} value={this.state.input} >
                             <option value="select">{(this.props.lang === "en") ? "template" : "テンプレ"}</option>
                             <option value="form">{(this.props.lang === "en") ? "form" : "フォーム"}</option>
+                            <option value="hint">{(this.props.lang === "en") ? "hint" : "ヒント"}</option>
                         </Input>
                     </FormGroup>
                 </Col>
@@ -111,6 +136,7 @@ class CommitObject extends Component {
 const mapStateToProps = (state) => {
     return {
         object: state.message.object,
+        phrases: state.phrases.phrases,
         lang: state.lang.lang
     };
 };

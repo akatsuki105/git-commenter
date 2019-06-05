@@ -25,16 +25,10 @@ class Modifier extends Component {
             this.props.dispatch(addElement("modifier", ""));
         } else if (e.target.name === "modifier") {
             this.props.dispatch(addElement("modifier", e.target.value));
-        } else if (e.target.name === "hint") {
-            this.props.dispatch(addElement("modifier", e.target.value));
-            this.setState({
-                input: "form",
-            });
         }
     }
 
     renderInput() {
-        const phraseList = this.props.phrases;
         if (this.state.input === "select") {
             return (
                 <FormGroup>
@@ -56,22 +50,6 @@ class Modifier extends Component {
                     <Input type="text" bsSize="sm" name="modifier" onChange={this.handleChange} value={this.props.modifier} placeholder={(this.props.lang === "en") ? "It is a place to add something you want to add other than Verb or Adjective or Object. For example, time, condition, purpose etc..." : "コミット内容やコミット対象以外で、他に付け加えたいものを付け加える場所です。例としては、場所や時間、目的などです。"} autoComplete="off" />
                 </FormGroup>
             )
-        } else if (this.state.input === "hint") {
-            return (
-                <FormGroup>
-                    <Input type="select" bsSize="sm" name="hint" onChange={this.handleChange} >
-                        <option value=""></option>
-                        {
-                            Object.keys(phraseList).map((phrase) => {
-                                return (
-                                    <option value={phrase}>{phrase}   {phraseList[phrase]}</option>
-                                )
-                            })
-                        }
-                    </Input>
-                    <FormText>ヒントは動詞とともに頻出するフレーズをサジェストする機能です。OはObjectで入力する目的語です。</FormText>
-                </FormGroup>
-            )
         }
     }
 
@@ -84,7 +62,6 @@ class Modifier extends Component {
                         <Input type="select" bsSize="sm" name="input" onChange={this.handleChange} value={this.state.input} >
                             <option value="select">{(this.props.lang === "en") ? "template" : "テンプレ"}</option>
                             <option value="form">{(this.props.lang === "en") ? "form" : "フォーム"}</option>
-                            <option value="hint">{(this.props.lang === "en") ? "hint" : "ヒント"}</option>
                         </Input>
                     </FormGroup>
                 </Col>
@@ -99,7 +76,6 @@ class Modifier extends Component {
 const mapStateToProps = (state) => {
     return {
         modifier: state.message.modifier,
-        phrases: state.phrases.phrases,
         lang: state.lang.lang
     };
 };
