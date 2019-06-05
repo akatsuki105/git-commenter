@@ -100,12 +100,12 @@ class CommitObject extends Component {
                         {
                             Object.keys(phraseList).map((phrase) => {
                                 return (
-                                    <option value={JSON.stringify(phraseList[phrase])}>{phrase}   {phraseList[phrase].ja}</option>
+                                    <option value={JSON.stringify(phraseList[phrase])}>{phrase}   {(this.props.lang === "en") ? "" : phraseList[phrase].ja}</option>
                                 )
                             })
                         }
                     </Input>
-                    <FormText>ヒントは動詞とともに頻出するフレーズをサジェストする機能です。</FormText>
+                    <FormText>{(this.props.lang === "en") ? "suggest frequently occurring phrases with verbs." : "動詞とともに頻出するフレーズをサジェストする機能です。(テンプレの動詞のみ)"}</FormText>
                 </FormGroup>
             )
         }
