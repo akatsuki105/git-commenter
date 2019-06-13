@@ -12,6 +12,7 @@
 # production
 /build
 /deploy.bat
+/deploy.sh
 
 # misc
 .DS_Store
