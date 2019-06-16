@@ -51,7 +51,11 @@ class Register extends Component {
     render() {
         return (
             <React.Fragment>
-                <Col xs={12}><h5>{"🖨"} {(this.props.lang === "en") ? `Add or Remove Template` : `テンプレートの追加・削除`}</h5></Col>
+                <Col xs={12}>
+                    <h5>{"🖨"} {(this.props.lang === "en") ? `Add or Remove Template` : `テンプレートの追加・削除`}</h5>
+                    <p>verb、objectに独自のテンプレ単語（またはフレーズ）を登録することができます。</p>
+                    <p>登録したテンプレ単語はテンプレで表示されるようになります。</p>
+                </Col>
                 <Col xs={12} className="my-1">
 
                     <FormGroup row>
@@ -60,8 +64,6 @@ class Register extends Component {
                             <Input type="select" name="addFormat" bsSize="sm" onChange={this.handleChange} value={this.state.addFormat}>
                                 <option value="verb">verb</option>
                                 <option value="object">object</option>
-                                <option value="modifier">modifier</option>
-                                <option value="reason">reason</option>
                             </Input>
                         </Col>
                         <Col sm={6}>
@@ -79,8 +81,6 @@ class Register extends Component {
                             <Input type="select" name="removeFormat" bsSize="sm" onChange={this.handleChange} value={this.state.removeFormat}>
                                 <option value="verb">verb</option>
                                 <option value="object">object</option>
-                                <option value="modifier">modifier</option>
-                                <option value="reason">reason</option>
                             </Input>
                         </Col>
                         <Col sm={6}>
