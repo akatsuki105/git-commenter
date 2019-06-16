@@ -17,10 +17,10 @@ class Language extends Component {
 
     render() {
         return (
-            <Col xs={12}>
+            <Col xs={12} className="mt-3">
                 <Form inline>
                     <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                        <Label for="lang" className="pr-2">{"🌎"} Language</Label>
+                        <Label for="lang" className="pr-2"><h5>{"🌎"} Language</h5></Label>
                         <Input type="select" name="lang" bsSize="sm" onChange={this.switchLang} value={this.props.lang} >
                             <option value="en">En</option>
                             <option value="ja">Ja</option>

@@ -43,7 +43,7 @@ export function phrases(state = {
 
 // 言語設定
 export function lang(state={
-    lang: (localStorage.getItem("lang") ? localStorage.getItem("lang") : "en")
+    lang: (localStorage.getItem("lang") ? localStorage.getItem("lang") : "ja")
 }, action) {
     switch (action.type) {
         case "SWITCH_LANGUAGE":

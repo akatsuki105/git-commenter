@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Row, Col } from "reactstrap";
+import Usage from "./Usage";
 import Register from "./Register";
 import MessageRegister from "./MessageRegister";
 import { Link } from "react-router-dom";
@@ -13,8 +14,9 @@ class Setting extends Component {
         return (
             <Row id="setting">
                 <Col xs={12} className="mb-1"><Link to="/"><h4 style={{"color": "white"}}>⚒ Setting 🛠</h4></Link></Col>
+                <Usage />
                 <Register />
-                <MessageRegister />
+                {/* <MessageRegister /> */}
                 <Language />
                 <Link to="/"><img id="setting-icon" src={setting} alt="setting" /></Link>
             </Row>

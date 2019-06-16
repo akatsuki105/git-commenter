@@ -51,7 +51,7 @@ class Register extends Component {
     render() {
         return (
             <React.Fragment>
-                <Col xs={12}>{"🖨"} {(this.props.lang === "en") ? `Add or Remove Template` : `テンプレートの追加・削除`}</Col>
+                <Col xs={12}><h5>{"🖨"} {(this.props.lang === "en") ? `Add or Remove Template` : `テンプレートの追加・削除`}</h5></Col>
                 <Col xs={12} className="my-1">
 
                     <FormGroup row>

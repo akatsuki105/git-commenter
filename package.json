@@ -1,6 +1,6 @@
 {
   "name": "GitCommenter",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "private": true,
   "description": "Git Comment Generator with GUI",
   "main": "src/electron-starter.js",
