@@ -20,7 +20,7 @@ class CommitObject extends Component {
     }
 
     async componentDidMount() {
-        const tmpls = await Aws.fetchTmpls("object", 25);
+        const tmpls = await Aws.fetchTmpls("object", 100);
 
         this.setState({
             objectTmpls: tmpls

@@ -21,7 +21,7 @@ class Verb extends Component {
     }
 
     async componentDidMount() {
-        const tmpls = await Aws.fetchTmpls("verb", 30);
+        const tmpls = await Aws.fetchTmpls("verb", 50);
 
         this.setState({
             verbTmpls: tmpls
