@@ -13,4 +13,8 @@ Please visit the following URL where this repository is hosted.
 
 ## Release
 
-#### 2019/6/5 [v1.3](https://github.com/Akatsuki-py/git-commenter/releases/tag/v1.3) released.
+#### Web App
+http://git-commenter.com/
+
+#### Desktop App
+2019/6/5 [v1.3](https://github.com/Akatsuki-py/git-commenter/releases/tag/v1.3) released.
